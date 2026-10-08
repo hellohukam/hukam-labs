@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hukam Labs — Useful software. Open by default.</title>
   
-  <!-- Technical SEO & Metadata -->
+  <!-- Technical SEO & Discovery -->
   <meta name="description" content="Hukam Labs is an independent open-source technology lab building practical AI, creative, developer, and automation tools — freely available under permissive licenses.">
   <meta name="keywords" content="Hukam Labs, open source, AI tools, developer tools, browser automation, Hukam Flow, image upscaler, Real-ESRGAN Vulkan, SVG cleaner, Waleed Ahmad">
   <meta name="author" content="Waleed Ahmad">
@@ -29,7 +29,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <!-- Stylesheets -->
+  <!-- Light / White Design System Stylesheets -->
   <link rel="stylesheet" href="/src/styles/design-system.css">
   <link rel="stylesheet" href="/src/styles/editorial.css">
   <link rel="stylesheet" href="/src/styles/responsive.css">
@@ -66,7 +66,6 @@
   </script>
 </head>
 <body>
-  <div class="technical-grid-bg"></div>
 
   <!-- 1. NAVIGATION -->
   <header class="site-header">
@@ -88,11 +87,11 @@
       <nav>
         <ul class="nav-links" id="nav-links">
           <li><a href="#flagship" class="nav-item-link">Featured Tools</a></li>
-          <li><a href="#projects" class="nav-item-link">Lab Index</a></li>
-          <li><a href="#the-lab" class="nav-item-link">The Lab</a></li>
-          <li><a href="#philosophy" class="nav-item-link">Philosophy</a></li>
+          <li><a href="#projects" class="nav-item-link">Explore Lab</a></li>
+          <li><a href="#the-lab" class="nav-item-link">Inside the Lab</a></li>
+          <li><a href="#philosophy" class="nav-item-link">Principles</a></li>
           <li><a href="#founder" class="nav-item-link">Founder</a></li>
-          <li><a href="/llms.txt" class="nav-item-link font-mono" style="font-size: 0.8rem; color: var(--color-brand);" title="Machine-readable specification for LLMs">llms.txt</a></li>
+          <li><a href="/llms.txt" class="nav-item-link font-mono" style="font-size: 0.8rem; color: var(--accent-brand);" title="Machine-readable specification for LLMs">llms.txt</a></li>
           <li class="mobile-actions">
             <a href="https://github.com/hellohukam" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
               GitHub Profile
@@ -120,10 +119,15 @@
   </header>
 
   <main>
-    <!-- 2. HERO SECTION -->
+    <!-- 2. HERO SECTION WITH INTERACTIVE CANVAS -->
     <section class="hero-section">
-      <div class="container">
-        <div class="hero-eyebrow">
+      <canvas id="hero-interactive-canvas"></canvas>
+
+      <div class="container hero-content">
+        <div class="hero-pill-tag">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
           <span>Independent Technology Lab &middot; Open-Source Tools</span>
         </div>
 
@@ -131,21 +135,21 @@
           Useful software.<br>Open by default.
         </h1>
 
-        <p class="hero-mission-lead">
+        <p class="hero-lead-text">
           Hukam Labs is an independent open-source lab building practical AI, creative, developer, and automation tools.
         </p>
 
-        <p class="hero-mission-desc">
+        <p class="hero-sub-text">
           We engineer standalone desktop applications, browser extensions, and local AI pipelines to solve actual production bottlenecks — freely available without forced subscriptions, cloud telemetry, or artificial paywalls.
         </p>
 
-        <div class="hero-cta-bar">
+        <div class="hero-actions-row">
           <a href="#flagship" class="btn btn-primary">
             <span>Explore Projects</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </a>
           <a href="https://github.com/hellohukam" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>
             <span>GitHub Profile</span>
@@ -155,413 +159,598 @@
           </a>
         </div>
 
-        <div class="spec-bar">
-          <div class="spec-cell">
-            <span class="spec-cell-value">16</span>
-            <span class="spec-cell-label">Open-Source Tools</span>
+        <div class="hero-stats-strip">
+          <div class="stat-chip">
+            <span class="stat-chip-val">16</span>
+            <span class="stat-chip-label">Open-Source Tools</span>
           </div>
-          <div class="spec-cell">
-            <span class="spec-cell-value">Local First</span>
-            <span class="spec-cell-label">On-Device Execution</span>
+          <div class="stat-chip">
+            <span class="stat-chip-val">Local-First</span>
+            <span class="stat-chip-label">On-Device Inference</span>
           </div>
-          <div class="spec-cell">
-            <span class="spec-cell-value">0</span>
-            <span class="spec-cell-label">Telemetry or Paywalls</span>
+          <div class="stat-chip">
+            <span class="stat-chip-val">0 KB</span>
+            <span class="stat-chip-label">Telemetry or Paywalls</span>
           </div>
-          <div class="spec-cell">
-            <span class="spec-cell-value">Permissive</span>
-            <span class="spec-cell-label">MIT &amp; GPL Licensed</span>
+          <div class="stat-chip">
+            <span class="stat-chip-val">Permissive</span>
+            <span class="stat-chip-label">MIT &amp; GPL Licensed</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. FLAGSHIP EDITORIAL SHOWCASES -->
-    <section class="section-wrapper" id="flagship">
+    <!-- 3. EDITORIAL STATEMENT TRANSITION -->
+    <section class="transition-statement-section">
       <div class="container">
-        <span class="section-label">Things We've Built</span>
-        <h2 class="section-heading">Core Systems &amp; Flagship Utilities</h2>
-        <p class="section-subtext">
-          Deep-dives into key tools engineered for high-throughput batch automation, local neural super-resolution, and vector asset processing.
+        <h2 class="statement-title">A collection of things I've built.</h2>
+        <p class="statement-desc">
+          Every utility in this lab began as an answer to a real production constraint — and was rebuilt into clean, documented open-source software for the community.
         </p>
+      </div>
+    </section>
 
-        <div class="flagship-showcase">
-          <!-- Flagship 1: Hukam Flow -->
-          <article class="showcase-block">
-            <div class="showcase-inner">
-              <div class="showcase-content">
-                <div>
-                  <div class="showcase-meta-row">
-                    <span class="badge-tag" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.25); color: #34d399;">Flagship Extension</span>
-                    <span class="status-indicator active">Active &middot; v6.3.1</span>
-                    <span class="badge-tag">Platform: Chromium MV3</span>
-                  </div>
+    <!-- 4. FLAGSHIP EDITORIAL SHOWCASES -->
+    <section class="section-wrapper" id="flagship" style="padding-top: 20px;">
+      <div class="container">
+        <div class="flagship-editorial-list">
 
-                  <h3 class="showcase-title">
-                    <a href="/projects/hukam-flow/">Hukam Flow</a>
-                  </h3>
-
-                  <div class="showcase-problem-box">
-                    <strong>The Real Problem Solved</strong>
-                    <p>
-                      Automating creative prompt batches on Google Flow (flow.google.com) fails because Angular cancels synthetic DOM events, network timeouts break long runs, and manual downloads lose prompt associations.
-                    </p>
-                  </div>
-
-                  <ul class="showcase-features">
-                    <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>Dedicated Chrome Side Panel UI (<code>Alt + Shift + F</code>)</span>
-                    </li>
-                    <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>MAIN-world Angular event synthesis hook bypassing form validation barriers</span>
-                    </li>
-                    <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>Real-time interception of internal Google Flow <code>batchexecute</code> network APIs</span>
-                    </li>
-                    <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>Smart Auto Mode: Auto-run, wait, auto-download, with prompt-indexed file naming</span>
-                    </li>
-                  </ul>
-
-                  <div class="tech-pill-list">
-                    <span class="tech-pill">Chrome MV3</span>
-                    <span class="tech-pill">Side Panel API</span>
-                    <span class="tech-pill">Angular Hooks</span>
-                    <span class="tech-pill">Web Request</span>
-                    <span class="tech-pill">Zero Telemetry</span>
-                  </div>
-                </div>
-
-                <div class="showcase-actions">
-                  <a href="/projects/hukam-flow/" class="btn btn-primary">
-                    <span>Project Details &rarr;</span>
-                  </a>
-                  <a href="https://github.com/hellohukam/hukam-flow" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    <span>Repository</span>
-                  </a>
-                  <a href="https://github.com/hellohukam/hukam-flow/releases" target="_blank" rel="noopener noreferrer" class="btn btn-ghost font-mono" style="font-size: 0.8rem;">
-                    <span>Releases ↗</span>
-                  </a>
-                </div>
+          <!-- Showcase 1: Hukam Flow -->
+          <article class="showcase-row">
+            <div class="showcase-text-col">
+              <div class="showcase-eyebrow">
+                <span class="badge-tag" style="background: rgba(5, 150, 105, 0.08); border-color: rgba(5, 150, 105, 0.25); color: #059669;">Flagship Extension</span>
+                <span class="status-indicator active">Active &middot; v6.3.1</span>
+                <span class="badge-tag">Chromium MV3</span>
               </div>
 
-              <!-- Visual / Code Inspector Frame -->
-              <div class="showcase-visual">
-                <div class="code-window-bar">
-                  <div class="window-pills">
-                    <span class="window-pill"></span>
-                    <span class="window-pill"></span>
-                    <span class="window-pill"></span>
-                  </div>
-                  <span class="terminal-title">hukam-flow // background-service-worker.js</span>
-                  <span class="badge-tag" style="font-size: 0.65rem;">MV3</span>
+              <h3 class="project-title-large">
+                <a href="/projects/hukam-flow/" style="color: inherit; text-decoration: none;">Hukam Flow</a>
+              </h3>
+
+              <p class="showcase-pitch">
+                Production-ready Chrome Manifest V3 workflow automation tool for Google Flow (flow.google.com). Features a dedicated dockable Side Panel, MAIN-world page hooks for Angular trusted events, real-time API response interception, and prompt-indexed auto-downloading.
+              </p>
+
+              <div class="problem-callout">
+                <strong>The Real Problem Solved</strong>
+                <p>
+                  Automating prompt batches on Google Flow fails because Angular cancels synthetic DOM events, network timeouts break long runs, and manual downloads lose prompt associations.
+                </p>
+              </div>
+
+              <ul class="feature-bullet-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Dedicated Chrome Side Panel UI (<code>Alt + Shift + F</code>)</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>MAIN-world Angular event synthesis hook bypassing form validation barriers</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Real-time interception of internal Google Flow <code>batchexecute</code> network APIs</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Smart Auto Mode: Auto-run, wait, auto-download, with prompt-indexed file naming</span>
+                </li>
+              </ul>
+
+              <div class="tech-tag-row">
+                <span class="tech-tag-chip">Chrome MV3</span>
+                <span class="tech-tag-chip">Side Panel API</span>
+                <span class="tech-tag-chip">Angular Hooks</span>
+                <span class="tech-tag-chip">Web Request</span>
+                <span class="tech-tag-chip">Zero Telemetry</span>
+              </div>
+
+              <div class="showcase-cta-group">
+                <a href="/projects/hukam-flow/" class="btn btn-primary">
+                  <span>Project Details &rarr;</span>
+                </a>
+                <a href="https://github.com/hellohukam/hukam-flow" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Repository</span>
+                </a>
+                <a href="https://github.com/hellohukam/hukam-flow/releases" target="_blank" rel="noopener noreferrer" class="btn btn-ghost font-mono" style="font-size: 0.8rem;">
+                  <span>Releases ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Live Simulator Col -->
+            <div class="showcase-demo-col">
+              <div class="flow-simulator-box" id="flow-simulator">
+                <div class="simulator-top-bar">
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-pure); font-family: var(--font-mono); text-transform: uppercase;">Side Panel Queue Runner</span>
+                  <span class="status-indicator active" style="font-size: 0.72rem;">Tab #241 Active</span>
                 </div>
 
-                <div class="code-editor-body">
-                  <span class="token-comment">// Intercept internal batchexecute response on flow.google.com</span><br>
-                  chrome.webRequest.onCompleted.<span class="token-fn">addListener</span>((details) =&gt; {<br>
-                  &nbsp;&nbsp;<span class="token-keyword">if</span> (details.url.<span class="token-fn">includes</span>(<span class="token-str">'batchexecute'</span>)) {<br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="token-fn">dispatchMediaSignal</span>(details.tabId, details);<br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="token-comment">// Trigger automated media download queue</span><br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;flowQueue.<span class="token-fn">stepNext</span>({ delay: <span class="token-fn">jitter</span>(3500, 1200) });<br>
-                  &nbsp;&nbsp;}<br>
-                  }, { urls: [<span class="token-str">'*://flow.google.com/*'</span>] });<br><br>
-                  <span class="token-comment">// Tab-Scoped State Isolation</span><br>
-                  <span class="token-keyword">const</span> storageKey = <span class="token-str">`flow_tab_`</span> + currentTabId;<br>
-                  <span class="token-keyword">await</span> chrome.storage.local.<span class="token-fn">set</span>({ [storageKey]: sessionState });<br><br>
-                  <span class="token-comment">[Queue 04/10]</span> Prompt dispatched &middot; <span class="token-str">Image rendered</span><br>
-                  <span class="token-comment">[AutoDownloader]</span> Saved <span class="token-var">flow_04_cyberpunk_neon.png</span>
+                <div class="queue-items-container">
+                  <div class="queue-step-item" id="flow-step-1">
+                    <span class="step-label">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                      <span>MAIN-world Angular Hook</span>
+                    </span>
+                    <span class="step-state waiting" id="flow-state-1">WAITING</span>
+                  </div>
+
+                  <div class="queue-step-item" id="flow-step-2">
+                    <span class="step-label">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                      <span>Synthetic Prompt Dispatch</span>
+                    </span>
+                    <span class="step-state waiting" id="flow-state-2">WAITING</span>
+                  </div>
+
+                  <div class="queue-step-item" id="flow-step-3">
+                    <span class="step-label">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="12" x2="2" y2="12"></line><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+                      <span>batchexecute Interception</span>
+                    </span>
+                    <span class="step-state waiting" id="flow-state-3">WAITING</span>
+                  </div>
+
+                  <div class="queue-step-item" id="flow-step-4">
+                    <span class="step-label">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                      <span>Prompt-Indexed AutoDownload</span>
+                    </span>
+                    <span class="step-state waiting" id="flow-state-4">WAITING</span>
+                  </div>
+                </div>
+
+                <div class="sim-terminal-screen" id="flow-sim-terminal">
+                  <span class="terminal-comment">// Idle. Click "Run Batch Demo" to simulate Chrome Side Panel queue.</span>
+                </div>
+
+                <div class="simulator-actions-row">
+                  <button id="flow-sim-run" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    <span>Run Batch Demo</span>
+                  </button>
+                  <button id="flow-sim-reset" class="btn btn-ghost" style="font-size: 0.78rem;">
+                    Reset
+                  </button>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- Flagship 2: Hukam AI Upscaler Pro -->
-          <article class="showcase-block">
-            <div class="showcase-inner">
-              <div class="showcase-content">
-                <div>
-                  <div class="showcase-meta-row">
-                    <span class="badge-tag" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.25); color: #fbbf24;">Standalone Executable</span>
-                    <span class="status-indicator active">Active &middot; v1.0.0</span>
-                    <span class="badge-tag">Engine: Vulkan NCNN</span>
-                  </div>
-
-                  <h3 class="showcase-title">
-                    <a href="/projects/hukam-ai-upscaler/">Hukam AI Upscaler Pro</a>
-                  </h3>
-
-                  <div class="showcase-problem-box">
-                    <strong>The Real Problem Solved</strong>
-                    <p>
-                      Super-resolution deep learning tools usually require 4GB+ of PyTorch/CUDA libraries (locking out AMD/Intel users) or expensive cloud subscriptions that leak sensitive creative artwork.
-                    </p>
-                  </div>
-
-                  <ul class="showcase-features">
-                    <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>Hardware-accelerated Vulkan Real-ESRGAN running across NVIDIA, AMD, and Intel GPUs</span>
-                    </li>
-                    <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>Standalone 55MB executable with pre-bundled neural weights (realesrgan-x4plus, anime, videov3)</span>
-                    </li>
-                    <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>Crash-resilient resume log (<code>upscaler_resume_log.json</code>) surviving power cuts &amp; pauses</span>
-                    </li>
-                    <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>Low-VRAM tile splitting preventing Out-Of-Memory crashes on laptop GPUs</span>
-                    </li>
-                  </ul>
-
-                  <div class="tech-pill-list">
-                    <span class="tech-pill">Real-ESRGAN</span>
-                    <span class="tech-pill">Vulkan NCNN</span>
-                    <span class="tech-pill">Python C++</span>
-                    <span class="tech-pill">Windows x64</span>
-                    <span class="tech-pill">Zero Cloud</span>
-                  </div>
-                </div>
-
-                <div class="showcase-actions">
-                  <a href="/projects/hukam-ai-upscaler/" class="btn btn-primary">
-                    <span>Project Details &rarr;</span>
-                  </a>
-                  <a href="https://github.com/hellohukam/hukam-ai-upscaler/releases/download/v1.0.0/HukamUpscaler.exe" class="btn btn-secondary">
-                    <span>Download .EXE (~55MB)</span>
-                  </a>
-                  <a href="https://github.com/hellohukam/hukam-ai-upscaler" target="_blank" rel="noopener noreferrer" class="btn btn-ghost font-mono" style="font-size: 0.8rem;">
-                    <span>GitHub ↗</span>
-                  </a>
-                </div>
+          <!-- Showcase 2: Hukam AI Upscaler Pro (Reversed layout) -->
+          <article class="showcase-row reversed">
+            <!-- Text Col -->
+            <div class="showcase-text-col">
+              <div class="showcase-eyebrow">
+                <span class="badge-tag" style="background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.25); color: #d97706;">Standalone Executable</span>
+                <span class="status-indicator active">Active &middot; v1.0.0</span>
+                <span class="badge-tag">Vulkan NCNN</span>
               </div>
 
-              <!-- Real Before / After Interactive Slider Frame -->
-              <div class="showcase-visual" style="padding: 16px;">
-                <div class="interactive-slider-box" id="interactive-slider">
-                  <img src="/assets/showcase/upscaler-original.jpg" alt="Original Uncompressed Input" class="slider-img">
-                  <span class="slider-legend right">Original (Uncompressed Crop)</span>
+              <h3 class="project-title-large">
+                <a href="/projects/hukam-ai-upscaler/" style="color: inherit; text-decoration: none;">Hukam AI Upscaler Pro</a>
+              </h3>
 
-                  <img src="/assets/showcase/upscaler-upscaled.jpg" alt="Vulkan 4x Upscaled Output" class="slider-img slider-img-after" id="slider-after-img">
-                  <span class="slider-legend left">Real-ESRGAN Vulkan (4x Enhanced)</span>
+              <p class="showcase-pitch">
+                Hardware-accelerated Vulkan Real-ESRGAN super-resolution desktop app for Windows x64. Bundles pre-converted weights into an ultra-portable 55MB single-file executable with resume logging and tile-based memory safety.
+              </p>
 
-                  <div class="slider-divider-line" id="slider-divider"></div>
-                  <div class="slider-drag-handle" id="slider-handle" aria-label="Drag slider">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                  </div>
+              <div class="problem-callout">
+                <strong>The Real Problem Solved</strong>
+                <p>
+                  Super-resolution deep learning tools usually require 4GB+ of PyTorch/CUDA libraries (locking out AMD/Intel users) or expensive cloud subscriptions that leak sensitive creative artwork.
+                </p>
+              </div>
+
+              <ul class="feature-bullet-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Hardware-accelerated Vulkan Real-ESRGAN running across NVIDIA, AMD, and Intel GPUs</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Standalone 55MB executable with pre-bundled neural weights</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Crash-resilient resume log surviving power cuts and batch pauses</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Low-VRAM tile splitting preventing Out-Of-Memory crashes on laptop GPUs</span>
+                </li>
+              </ul>
+
+              <div class="tech-tag-row">
+                <span class="tech-tag-chip">Real-ESRGAN</span>
+                <span class="tech-tag-chip">Vulkan NCNN</span>
+                <span class="tech-tag-chip">Python C++</span>
+                <span class="tech-tag-chip">Windows x64</span>
+                <span class="tech-tag-chip">Zero Cloud</span>
+              </div>
+
+              <div class="showcase-cta-group">
+                <a href="/projects/hukam-ai-upscaler/" class="btn btn-primary">
+                  <span>Project Details &rarr;</span>
+                </a>
+                <a href="https://github.com/hellohukam/hukam-ai-upscaler/releases/download/v1.0.0/HukamUpscaler.exe" class="btn btn-secondary">
+                  <span>Download .EXE (~55MB)</span>
+                </a>
+                <a href="https://github.com/hellohukam/hukam-ai-upscaler" target="_blank" rel="noopener noreferrer" class="btn btn-ghost font-mono" style="font-size: 0.8rem;">
+                  <span>GitHub ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Draggable Slider Col -->
+            <div class="showcase-demo-col">
+              <div class="slider-demo-wrapper" id="interactive-slider" role="region" aria-label="Before and after comparison slider">
+                <img src="/assets/showcase/upscaler-original.jpg" alt="Original Uncompressed Input Crop" class="slider-layer-img">
+                <span class="slider-tag-pill right">Original (Uncompressed Crop)</span>
+
+                <img src="/assets/showcase/upscaler-upscaled.jpg" alt="Vulkan 4x Enhanced Crop" class="slider-layer-img slider-layer-after" id="slider-after-img">
+                <span class="slider-tag-pill left">Vulkan 4x Real-ESRGAN</span>
+
+                <div class="slider-splitter-line" id="slider-divider"></div>
+                <div class="slider-center-handle" id="slider-handle" aria-label="Drag slider handle">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- Duo Grid: SVG Magic Cleaner & AI Image Forensic Repair -->
-          <div class="flagship-duo-grid">
-            <!-- Tool 3: SVG Magic Cleaner -->
-            <article class="card-panel duo-card">
-              <div>
-                <div class="showcase-meta-row">
-                  <span class="badge-tag" style="background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.25); color: #22d3ee;">WebGPU In-Browser</span>
-                  <span class="status-indicator active">Active &middot; v1.0.0</span>
-                </div>
-                <h3 class="duo-title">
-                  <a href="/projects/svg-magic-cleaner/">SVG Magic Cleaner</a>
-                </h3>
-                <p class="duo-desc">
-                  100% private, browser-based AI background remover and raster-to-SVG vectorizer using Hugging Face Transformers.js and WebGPU. Runs <code>briaai/RMBG-1.4</code> locally with zero cloud uploads.
+          <!-- Showcase 3: SVG Magic Cleaner -->
+          <article class="showcase-row">
+            <div class="showcase-text-col">
+              <div class="showcase-eyebrow">
+                <span class="badge-tag" style="background: rgba(6, 182, 212, 0.08); border-color: rgba(6, 182, 212, 0.25); color: #0891b2;">In-Browser AI</span>
+                <span class="status-indicator active">Active &middot; v1.0.0</span>
+                <span class="badge-tag">WebGPU Accelerated</span>
+              </div>
+
+              <h3 class="project-title-large">
+                <a href="/projects/svg-magic-cleaner/" style="color: inherit; text-decoration: none;">SVG Magic Cleaner</a>
+              </h3>
+
+              <p class="showcase-pitch">
+                100% private, browser-based AI background remover and raster-to-SVG vectorizer using Hugging Face Transformers.js and WebGPU. Executes <code>briaai/RMBG-1.4</code> locally with zero cloud uploads.
+              </p>
+
+              <div class="problem-callout">
+                <strong>The Real Problem Solved</strong>
+                <p>
+                  Graphic designers frequently need transparent cutouts and vectorized logos, but existing tools upload client files to remote servers or bill recurring per-image credits.
                 </p>
-                <div class="tech-pill-list">
-                  <span class="tech-pill">React 18</span>
-                  <span class="tech-pill">TypeScript</span>
-                  <span class="tech-pill">WebGPU</span>
-                  <span class="tech-pill">Transformers.js</span>
-                </div>
               </div>
 
-              <div class="showcase-actions" style="margin-top: 20px;">
-                <a href="/projects/svg-magic-cleaner/" class="item-link-primary">
-                  <span>Read Architecture &rarr;</span>
+              <ul class="feature-bullet-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>In-browser local inference via WebGPU using <code>briaai/RMBG-1.4</code></span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Automated raster contour tracing into pure SVG Bezier paths</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>100% client-side privacy: zero images sent over the network</span>
+                </li>
+              </ul>
+
+              <div class="tech-tag-row">
+                <span class="tech-tag-chip">React 18</span>
+                <span class="tech-tag-chip">TypeScript</span>
+                <span class="tech-tag-chip">WebGPU</span>
+                <span class="tech-tag-chip">Transformers.js</span>
+                <span class="tech-tag-chip">SVG Tracer</span>
+              </div>
+
+              <div class="showcase-cta-group">
+                <a href="/projects/svg-magic-cleaner/" class="btn btn-primary">
+                  <span>Project Details &rarr;</span>
                 </a>
-                <a href="https://github.com/hellohukam/svg-magic-cleaner" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); font-size: 0.82rem;">
-                  GitHub Source ↗
+                <a href="https://github.com/hellohukam/svg-magic-cleaner" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Repository</span>
                 </a>
               </div>
-            </article>
+            </div>
 
-            <!-- Tool 4: AI Image Forensic Repair -->
-            <article class="card-panel duo-card">
-              <div>
-                <div class="showcase-meta-row">
-                  <span class="badge-tag" style="background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.25); color: #fb7185;">Binary Forensics</span>
-                  <span class="status-indicator active">Active &middot; v1.1.0</span>
+            <!-- Vector / Raster Interactive Toggle Col -->
+            <div class="showcase-demo-col">
+              <div class="vector-toggle-box" id="vector-toggle-box">
+                <div class="vector-toggle-bar">
+                  <span id="vector-mode-status" style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted);">Raster Mode &middot; Transparent PNG</span>
+                  <div class="vector-toggle-group">
+                    <button id="toggle-raster-mode" class="vector-mode-btn active">Raster PNG</button>
+                    <button id="toggle-vector-mode" class="vector-mode-btn">Vector Paths</button>
+                  </div>
                 </div>
-                <h3 class="duo-title">
-                  <a href="/projects/ai-image-forensic-repair/">AI Image Forensic Repair</a>
-                </h3>
-                <p class="duo-desc">
-                  Lossless pixel buffer reconstruction utility solving the infamous Adobe Illustrator <em>"File format cannot be placed"</em> error on AI images (Midjourney, ComfyUI) by rebuilding corrupt container headers.
+
+                <div class="canvas-preview-board">
+                  <svg id="vector-preview-graphic" class="preview-graphic-svg mode-raster" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="42" fill="#0891b2" fill-opacity="0.12" stroke="#0891b2" stroke-width="2"></circle>
+                    <polygon points="50,18 61,38 84,42 67,59 71,82 50,71 29,82 33,59 16,42 39,38" fill="#0891b2" stroke="#0e7490" stroke-width="2"></polygon>
+                    <circle cx="50" cy="18" r="3" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"></circle>
+                    <circle cx="84" cy="42" r="3" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"></circle>
+                    <circle cx="71" cy="82" r="3" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"></circle>
+                    <circle cx="29" cy="82" r="3" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"></circle>
+                    <circle cx="16" cy="42" r="3" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"></circle>
+                  </svg>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">
+                  <span>Execution: Local WebGPU</span>
+                  <span>42 Bezier Curves</span>
+                  <span style="color: var(--accent-emerald);">0 KB Cloud</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Showcase 4: AI Image Forensic Repair (Reversed layout) -->
+          <article class="showcase-row reversed">
+            <!-- Text Col -->
+            <div class="showcase-text-col">
+              <div class="showcase-eyebrow">
+                <span class="badge-tag" style="background: rgba(225, 29, 72, 0.08); border-color: rgba(225, 29, 72, 0.25); color: #e11d48;">Binary Forensics</span>
+                <span class="status-indicator active">Active &middot; v1.1.0</span>
+                <span class="badge-tag">Lossless Reconstruction</span>
+              </div>
+
+              <h3 class="project-title-large">
+                <a href="/projects/ai-image-forensic-repair/" style="color: inherit; text-decoration: none;">AI Image Forensic Repair</a>
+              </h3>
+
+              <p class="showcase-pitch">
+                Lossless pixel buffer reconstruction utility solving the infamous Adobe Illustrator <em>"File format cannot be placed"</em> error on AI images (Midjourney, ComfyUI, DALL-E) by rebuilding corrupt container headers.
+              </p>
+
+              <div class="problem-callout">
+                <strong>The Real Problem Solved</strong>
+                <p>
+                  Generative AI engines frequently generate non-standard PNGs with truncated chunks or unsynchronized markers that cause professional Adobe vector software to fail to import.
                 </p>
-                <div class="tech-pill-list">
-                  <span class="tech-pill">Python</span>
-                  <span class="tech-pill">Pillow</span>
-                  <span class="tech-pill">Binary Forensics</span>
-                  <span class="tech-pill">Standalone .EXE</span>
-                </div>
               </div>
 
-              <div class="showcase-actions" style="margin-top: 20px;">
-                <a href="/projects/ai-image-forensic-repair/" class="item-link-primary">
-                  <span>Read Architecture &rarr;</span>
+              <ul class="feature-bullet-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Synthesizes valid ISO standard PNG signatures and mandatory IHDR chunks</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>100% lossless: preserves original RGB/RGBA raster buffer without recompression</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Batch directory processing with automatic unplaced file recovery</span>
+                </li>
+              </ul>
+
+              <div class="tech-tag-row">
+                <span class="tech-tag-chip">Python</span>
+                <span class="tech-tag-chip">Pillow</span>
+                <span class="tech-tag-chip">Binary Struct</span>
+                <span class="tech-tag-chip">PNG Specifications</span>
+                <span class="tech-tag-chip">Standalone .EXE</span>
+              </div>
+
+              <div class="showcase-cta-group">
+                <a href="/projects/ai-image-forensic-repair/" class="btn btn-primary">
+                  <span>Project Details &rarr;</span>
                 </a>
-                <a href="https://github.com/hellohukam/ai-image-forensic-repair" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); font-size: 0.82rem;">
-                  GitHub Source ↗
+                <a href="https://github.com/hellohukam/ai-image-forensic-repair" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Repository</span>
                 </a>
               </div>
-            </article>
-          </div>
+            </div>
+
+            <!-- Binary Inspector Col -->
+            <div class="showcase-demo-col">
+              <div class="binary-repair-box" id="binary-repair-box">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-pure); font-family: var(--font-mono); text-transform: uppercase;">Binary Header Inspector</span>
+                  <span class="badge-tag" style="font-size: 0.7rem;">PNG Container</span>
+                </div>
+
+                <div class="forensic-status error" id="forensic-status-line">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span>Error: Adobe Illustrator throws "File format cannot be placed"</span>
+                </div>
+
+                <div class="hex-stream-preview" id="forensic-hex-display"><span style="color: var(--accent-rose); font-weight: 700;">00 00 00 00 00 00 00 00</span>  <span style="color: var(--text-muted);">&middot; NULL Padding / Missing Magic Signature</span>
+49 48 44 52 00 00 00 00  <span style="color: var(--accent-rose);">&middot; Truncated IHDR chunk descriptor</span>
+?? ?? ?? ?? ?? ?? ?? ??  <span style="color: var(--accent-rose);">&middot; Unsynchronized pixel buffer markers</span>
+00 00 00 00 00 00 00 00  <span style="color: var(--text-muted);">&middot; Missing pHYs / Corrupted color profile</span></div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <button id="forensic-run-repair" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 14px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Run Lossless Forensic Repair</span>
+                  </button>
+                  <span style="font-size: 0.74rem; font-family: var(--font-mono); color: var(--text-muted);">ISO/IEC 15948</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- 4. COMPLETE LAB INDEX (CATALOG) -->
-    <section class="section-wrapper" id="projects">
+    <!-- 5. GOOGLE LABS-STYLE "EXPLORE THE LAB" CATALOG -->
+    <section class="lab-catalog-section" id="projects">
       <div class="container">
-        <span class="section-label">All Lab Software</span>
-        <h2 class="section-heading">The Complete Open-Source Index</h2>
-        <p class="section-subtext">
-          Browse 16 production tools, AI inference models, and utilities created across the Hukam Labs ecosystem. Filter by domain or search by keywords.
-        </p>
-
-        <!-- Catalog Toolbar -->
-        <div class="catalog-toolbar">
-          <div class="filter-group">
-            <button class="filter-btn active" data-filter="all">All Projects (16)</button>
-            <button class="filter-btn" data-filter="ai-media">AI &amp; Media (7)</button>
-            <button class="filter-btn" data-filter="developer">Developer &amp; Automation (4)</button>
-            <button class="filter-btn" data-filter="utilities">Creative Utilities (5)</button>
+        <div class="catalog-header-bar">
+          <div>
+            <span class="badge-tag" style="margin-bottom: 8px;">Explore The Lab</span>
+            <h2 class="project-title-large" style="margin-bottom: 6px;">The Complete Open-Source Index</h2>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 600px; margin: 0;">
+              Browse all 16 production tools, AI models, and creative utilities engineered across Hukam Labs.
+            </p>
           </div>
 
-          <div class="search-field-wrapper">
-            <svg class="search-field-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="catalog-search" class="search-field-input" placeholder="Search by name, problem, or stack..." aria-label="Search repositories">
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <div class="catalog-filters-row">
+              <button class="catalog-filter-btn active" data-filter="all">All Projects (16)</button>
+              <button class="catalog-filter-btn" data-filter="ai">AI &amp; Media (7)</button>
+              <button class="catalog-filter-btn" data-filter="developer">Developer &amp; Automation (4)</button>
+              <button class="catalog-filter-btn" data-filter="creative">Creative Utilities (5)</button>
+            </div>
+
+            <div class="catalog-search-box">
+              <svg class="catalog-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="catalog-search" class="catalog-search-input" placeholder="Search by name, stack, or problem..." aria-label="Search repositories">
+            </div>
           </div>
         </div>
 
-        <!-- Dynamic Grid Container -->
-        <div class="catalog-grid" id="catalog-grid">
-          <!-- Populated by src/main.js -->
-        </div>
+        <!-- Dynamic Grid Populated by main.js -->
+        <div class="projects-masonry-grid" id="projects-masonry-grid"></div>
       </div>
     </section>
 
-    <!-- 5. THE LAB SECTION -->
-    <section class="section-wrapper" id="the-lab">
+    <!-- 6. "INSIDE THE LAB" LIFECYCLE & TIMELINE -->
+    <section class="inside-lab-section" id="the-lab">
       <div class="container">
-        <span class="section-label">The Lab</span>
-        <h2 class="section-heading">Independent Software Craft</h2>
-        
-        <div class="editorial-grid">
-          <div class="editorial-col">
-            <h3>What is Hukam Labs?</h3>
-            <p>
+        <div class="lab-story-grid">
+          <div>
+            <span class="badge-tag" style="margin-bottom: 8px;">Inside the Lab</span>
+            <h2 class="lab-story-heading">Independent Software Craft</h2>
+            <p class="lab-story-desc">
               Hukam Labs is an independent technology workshop where Waleed Ahmad ("Hukam") experiments with local AI inference, desktop toolchains, and browser automation to build practical tools that solve real bottlenecks.
             </p>
-            <p>
-              Rather than building speculative demo prototypes or locked-down commercial SaaS applications, the lab focuses on standalone, executable software that creators and engineers can run locally on their own machines without external surveillance or cloud friction.
+            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary);">
+              Rather than building speculative commercial SaaS applications with forced subscriptions, the lab focuses on standalone, executable software that creators and engineers can run locally on their own machines without external surveillance or cloud friction.
             </p>
           </div>
-          <div class="editorial-col">
-            <h3>Origin in Daily Bottlenecks</h3>
-            <p>
-              Every utility in this lab was born out of an actual production frustration: removing backgrounds from hundreds of graphics without recurring API fees, running super-resolution without NVIDIA CUDA driver conflicts, automating complex browser generation loops without getting throttled, or repairing malformed image files for Adobe Illustrator.
+
+          <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-xs);">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-pure); margin-bottom: 12px;">Origin in Daily Bottlenecks</h3>
+            <p style="font-size: 0.92rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 14px;">
+              Every utility here was born out of an actual production frustration: removing backgrounds from hundreds of graphics without recurring API fees, running super-resolution without NVIDIA CUDA driver conflicts, or repairing malformed image files for Adobe Illustrator.
             </p>
-            <p>
+            <p style="font-size: 0.92rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 0;">
               When a tool proves effective in production, it is cleaned, documented, licensed under MIT or GPL, and published openly for the developer and creator community.
             </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 6. PHILOSOPHY: BUILT TO BE USED -->
-    <section class="section-wrapper" id="philosophy">
-      <div class="container">
-        <span class="section-label">Built to Be Used</span>
-        <h2 class="section-heading">Core Engineering Principles</h2>
-        <p class="section-subtext">
-          Useful software should be accessible. We believe practical engineering speaks through executable code, transparent repositories, and measurable workflow speedups.
-        </p>
-
-        <div class="pillars-row">
-          <div class="pillar-item">
-            <span class="pillar-num">01 // LOCAL</span>
-            <h4 class="pillar-name">Local &amp; Private Execution</h4>
-            <p class="pillar-text">
-              Tools execute directly on your CPU, GPU, or browser runtime. Prompts, vectors, credentials, and media files never touch third-party tracking servers.
-            </p>
+        <!-- Evolution Pipeline Strip -->
+        <div class="pipeline-strip">
+          <div class="pipeline-node">
+            <span class="node-step-tag">01 // CONCEPT</span>
+            <h4 class="node-title">Production Constraint</h4>
+            <p class="node-desc">Identified during daily design, automation, or creative development workflows.</p>
           </div>
 
-          <div class="pillar-item">
-            <span class="pillar-num">02 // ACCESS</span>
-            <h4 class="pillar-name">Accessible by Default</h4>
-            <p class="pillar-text">
-              Practical utilities should not be locked behind recurring subscription paywalls, artificial compute tokens, or invasive registration barriers.
-            </p>
+          <div class="pipeline-node">
+            <span class="node-step-tag">02 // PROTOTYPE</span>
+            <h4 class="node-title">Local Experimentation</h4>
+            <p class="node-desc">Rapid iteration testing local Vulkan kernels, browser DOM hooks, or WebGPU shaders.</p>
           </div>
 
-          <div class="pillar-item">
-            <span class="pillar-num">03 // TRANSPARENT</span>
-            <h4 class="pillar-name">Genuine Open Source</h4>
-            <p class="pillar-text">
-              Code is published under permissive MIT or GPL licenses on GitHub. Anyone can inspect, audit, fork, learn, customize, or contribute without vendor lock-in.
-            </p>
+          <div class="pipeline-node">
+            <span class="node-step-tag">03 // ACTIVE</span>
+            <h4 class="node-title">Production Hardening</h4>
+            <p class="node-desc">Built into self-contained desktop apps, Chrome MV3 extensions, or CLI pipelines.</p>
           </div>
 
-          <div class="pillar-item">
-            <span class="pillar-num">04 // INDEPENDENT</span>
-            <h4 class="pillar-name">Engineering Over Hype</h4>
-            <p class="pillar-text">
-              Maintained independently without venture capital pressures or artificial marketing claims distorting developer experience and software autonomy.
-            </p>
+          <div class="pipeline-node">
+            <span class="node-step-tag">04 // COMPLETE</span>
+            <h4 class="node-title">Open Publication</h4>
+            <p class="node-desc">Published openly under MIT or GPL with full documentation and zero telemetry.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 7. FOUNDER PROFILE -->
-    <section class="section-wrapper" id="founder">
+    <!-- 7. "BUILT TO BE USED" OPEN SOURCE EXPLORER -->
+    <section class="open-source-section" id="philosophy">
       <div class="container">
-        <span class="section-label">Engineering Lead</span>
-        <h2 class="section-heading">About Waleed Ahmad</h2>
+        <div class="os-statement-block">
+          <span class="badge-tag" style="margin-bottom: 8px;">Built to Be Used</span>
+          <h2 class="os-statement-heading">Core Engineering Principles</h2>
+          <p class="os-statement-sub">
+            Useful software should be accessible. We believe practical engineering speaks through executable code, transparent repositories, and measurable workflow speedups.
+          </p>
+        </div>
 
-        <div class="founder-profile-card">
-          <div class="founder-bio-group">
-            <div class="founder-title-row">
-              <h3>Waleed Ahmad</h3>
-              <span>"Hukam" &middot; Independent Developer &amp; AI Specialist</span>
-            </div>
-            <p>
+        <div class="hero-stats-strip" style="max-width: 100%; margin-bottom: 48px;">
+          <div class="stat-chip">
+            <span class="stat-chip-val" style="font-size: 1rem; color: var(--accent-brand);">01 // LOCAL FIRST</span>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-top: 6px; margin-bottom: 0;">
+              Tools execute directly on your CPU, GPU, or browser runtime. Prompts and media never touch remote servers.
+            </p>
+          </div>
+
+          <div class="stat-chip">
+            <span class="stat-chip-val" style="font-size: 1rem; color: var(--accent-emerald);">02 // ACCESSIBLE</span>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-top: 6px; margin-bottom: 0;">
+              No subscription paywalls, artificial compute tokens, credit expiration, or registration gates.
+            </p>
+          </div>
+
+          <div class="stat-chip">
+            <span class="stat-chip-val" style="font-size: 1rem; color: var(--accent-amber);">03 // TRANSPARENT</span>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-top: 6px; margin-bottom: 0;">
+              Code is published under permissive MIT or GPL licenses. Anyone can inspect, audit, or fork freely.
+            </p>
+          </div>
+
+          <div class="stat-chip">
+            <span class="stat-chip-val" style="font-size: 1rem; color: var(--accent-violet);">04 // INDEPENDENT</span>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-top: 6px; margin-bottom: 0;">
+              Maintained independently without venture capital pressures or artificial marketing hype distorting UX.
+            </p>
+          </div>
+        </div>
+
+        <!-- Open Source Repository Inspector -->
+        <div class="repo-inspector-box">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-pure); font-family: var(--font-mono); text-transform: uppercase;">Repository Inspector</span>
+            <span class="badge-tag">Direct GitHub Mirror</span>
+          </div>
+
+          <!-- Switchable Tabs List -->
+          <div class="repo-tabs-list" id="repo-tabs-list"></div>
+
+          <!-- Interactive Details Display -->
+          <div id="repo-inspector-display"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FOUNDER PROFILE & FINAL CTA -->
+    <section class="founder-cta-section" id="founder">
+      <div class="container">
+        <div class="founder-card-light">
+          <div class="founder-info-left">
+            <div class="badge-tag" style="margin-bottom: 8px;">Engineering Lead</div>
+            <h3 class="founder-name-title">Waleed Ahmad</h3>
+            <div class="founder-role-sub">"Hukam" &middot; Independent Developer &amp; AI Specialist &middot; PSEB Registered Freelancer</div>
+            
+            <p class="founder-bio-text">
               Waleed Ahmad is an independent software developer, AI pipeline specialist, and PSEB registered freelancer based in Pakistan. He architects desktop utilities, Vulkan GPU pipelines, and browser automation systems.
             </p>
-            <p>
-              His personal commercial portfolio (<a href="https://likehukam.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-brand);">likehukam.com</a>) showcases client engagements and technology advisory work, while Hukam Labs represents his independent open-source research and freely accessible software contributions.
+            <p class="founder-bio-text">
+              His personal commercial portfolio (<a href="https://likehukam.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-brand); font-weight: 600;">likehukam.com</a>) showcases client engagements and technology advisory work, while Hukam Labs represents his independent open-source research and freely accessible software contributions.
             </p>
-            <div class="founder-links-row">
+
+            <div class="founder-links-pills">
               <a href="https://github.com/hellohukam" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 14px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                 <span>GitHub Profile</span>
               </a>
               <a href="https://likehukam.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 14px;">
-                <span>Personal Portfolio</span>
+                <span>likehukam.com ↗</span>
               </a>
               <a href="mailto:hello@theRedLikeHukum.com" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 14px;">
                 <span>hello@theRedLikeHukum.com</span>
@@ -569,22 +758,39 @@
             </div>
           </div>
 
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); background: var(--bg-surface-subtle); padding: 16px; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs); min-width: 200px;">
-            <div style="color: var(--text-secondary); margin-bottom: 6px; font-weight: 600;">IDENTITY VERIFICATION</div>
-            <div>GitHub: @hellohukam</div>
-            <div>Status: PSEB Registered</div>
-            <div>Contact: Inquiries via email</div>
+          <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-muted); background: var(--bg-surface-subtle); padding: 20px; border: 1px solid var(--border-medium); border-radius: var(--radius-sm); min-width: 220px;">
+            <div style="color: var(--text-pure); margin-bottom: 8px; font-weight: 700; text-transform: uppercase;">LAB PROFILE</div>
+            <div style="margin-bottom: 4px;">Handle: @hellohukam</div>
+            <div style="margin-bottom: 4px;">Status: PSEB Registered</div>
+            <div style="margin-bottom: 4px;">Studio: Hukam Labs</div>
+            <div>Inquiries: Email directly</div>
+          </div>
+        </div>
+
+        <div class="final-cta-block">
+          <h2 class="final-cta-title">Useful software. Open by default.</h2>
+          <p class="final-cta-sub">
+            All 16 projects are open-source and freely accessible under permissive licenses on GitHub.
+          </p>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
+            <a href="https://github.com/hellohukam" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>Explore GitHub Repositories</span>
+            </a>
+            <a href="/llms.txt" class="btn btn-secondary font-mono" style="font-size: 0.85rem;">
+              <span>Read /llms.txt Specification</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- 8. FOOTER -->
+  <!-- 9. FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-main-grid">
-        <div class="footer-brand-summary">
+      <div class="footer-columns-grid">
+        <div class="footer-brand-bio">
           <div class="lab-wordmark">
             <div class="lab-glyph">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -602,15 +808,15 @@
             An independent open-source technology lab building practical AI, creative, developer, and automation tools. Useful software should be accessible.
           </p>
           <div style="margin-top: 14px; font-size: 0.82rem; color: var(--text-muted);">
-            Inquiries: <a href="mailto:hello@theRedLikeHukum.com" style="color: var(--color-brand);">hello@theRedLikeHukum.com</a>
+            Inquiries: <a href="mailto:hello@theRedLikeHukum.com" style="color: var(--accent-brand); font-weight: 500;">hello@theRedLikeHukum.com</a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Flagship Tools</h4>
-          <ul class="footer-link-list">
+          <h4 class="footer-col-header">Flagship Tools</h4>
+          <ul class="footer-nav-list">
             <li><a href="/projects/hukam-flow/">Hukam Flow</a></li>
-            <li><a href="/projects/hukam-ai-upscaler/">Hukam AI Upscaler</a></li>
+            <li><a href="/projects/hukam-ai-upscaler/">Hukam AI Upscaler Pro</a></li>
             <li><a href="/projects/svg-magic-cleaner/">SVG Magic Cleaner</a></li>
             <li><a href="/projects/ai-image-forensic-repair/">AI Forensic Repair</a></li>
             <li><a href="/projects/vector-craft-studio/">Vector Craft Studio</a></li>
@@ -618,8 +824,8 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Core Systems</h4>
-          <ul class="footer-link-list">
+          <h4 class="footer-col-header">Core Systems</h4>
+          <ul class="footer-nav-list">
             <li><a href="/projects/birefnet-bg-remover/">BiRefNet BG Remover</a></li>
             <li><a href="/projects/ai-prompt-exif-extractor/">Prompt EXIF Extractor</a></li>
             <li><a href="/projects/batch-svg-sanitizer/">Batch SVG Sanitizer</a></li>
@@ -629,8 +835,8 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Machine &amp; Legal</h4>
-          <ul class="footer-link-list">
+          <h4 class="footer-col-header">Machine &amp; Legal</h4>
+          <ul class="footer-nav-list">
             <li><a href="/llms.txt" class="font-mono">/llms.txt</a></li>
             <li><a href="/sitemap.xml" class="font-mono">/sitemap.xml</a></li>
             <li><a href="/robots.txt" class="font-mono">/robots.txt</a></li>

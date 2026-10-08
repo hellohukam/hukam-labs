@@ -1,54 +1,65 @@
 /* ==========================================================================
-   Hukam Labs — Visual System & Design Tokens
-   Engineered for an authentic open-source technology lab.
+   Hukam Labs — Master Design System (Light / White Canvas)
+   Inspired by modern experimentation labs (Google Labs, Apple product design).
+   Clean, bright, calm, spacious, human, and technically credible.
    ========================================================================== */
 
 :root {
-  /* Surface Colors: Deep Carbon, Obsidian & Slate */
-  --bg-canvas: #090b10;
-  --bg-surface: #10131a;
-  --bg-surface-raised: #151922;
-  --bg-surface-subtle: rgba(255, 255, 255, 0.03);
-  --bg-surface-hover: rgba(255, 255, 255, 0.06);
+  /* Surface Canvas: Pure White & Soft Warm Neutrals */
+  --bg-canvas: #fafafc;
+  --bg-surface: #ffffff;
+  --bg-surface-subtle: #f4f5f8;
+  --bg-surface-hover: #eef0f4;
+  --bg-surface-alt: #f8f9fc;
 
-  /* Hairline Borders: Crisp Architectural Grid */
-  --border-hairline: rgba(255, 255, 255, 0.08);
-  --border-contrast: rgba(255, 255, 255, 0.16);
-  --border-strong: rgba(255, 255, 255, 0.28);
+  /* Hairline Borders: Crisp Optical Hierarchy */
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-medium: rgba(0, 0, 0, 0.11);
+  --border-strong: rgba(0, 0, 0, 0.22);
 
-  /* Functional Accents (Engineered, not neon) */
-  --color-brand: #38bdf8;         /* Signal Cyan */
-  --color-amber: #f59e0b;         /* Vulkan / Hardware Amber */
-  --color-emerald: #10b981;       /* Terminal Green / Active */
-  --color-rose: #f43f5e;          /* Diagnostic Crimson */
-  --color-violet: #8b5cf6;        /* Vector / Quantization Violet */
-  --color-teal: #14b8a6;          /* Cleaner Teal */
+  /* Elevation: Soft Diffused Natural Light Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-focus: 0 0 0 3px rgba(37, 99, 235, 0.2);
 
-  /* Typography Colors */
-  --text-pure: #ffffff;
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
+  /* Typography Colors: Deep Carbon Contrast */
+  --text-pure: #0f172a;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
   --text-muted: #64748b;
-  --text-code: #7dd3fc;
+  --text-code: #0369a1;
 
-  /* Typography Stack */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* Restrained Functional Accent Tokens */
+  --accent-brand: #2563eb;        /* Sapphire Blue */
+  --accent-emerald: #059669;      /* Emerald / Active / Terminal */
+  --accent-amber: #d97706;        /* Warm Copper / Hardware */
+  --accent-cyan: #0891b2;         /* Vector Cyan */
+  --accent-rose: #e11d48;         /* Forensic Diagnostic Rose */
+  --accent-violet: #7c3aed;       /* Multi-layer Violet */
 
-  /* Spatial Scale */
-  --container-max: 1240px;
+  /* Typography System */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* Layout Scale */
+  --container-max: 1220px;
   --header-height: 64px;
-  --radius-xs: 3px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
 
-  /* Subtle Transitions */
-  --transition-fast: 140ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Timing */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 160ms var(--ease-smooth);
+  --transition-normal: 260ms var(--ease-smooth);
 }
 
-/* Global Reset & Box Model */
+/* Base Reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -58,7 +69,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 20px);
+  scroll-padding-top: calc(var(--header-height) + 24px);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -73,26 +84,26 @@ body {
   overflow-x: hidden;
 }
 
-/* Subtle Technical Hairline Grid */
-.technical-grid-bg {
+/* Subtle Apple/Google Style Background Mesh Lines */
+.bg-subtle-pattern {
   position: fixed;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 48px 48px;
+    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Base Layout Container */
+/* Layout Containers */
 .container {
   width: 100%;
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 28px;
+  padding-right: 28px;
   position: relative;
   z-index: 1;
 }
@@ -101,12 +112,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-pure);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 p {
   color: var(--text-secondary);
+  line-height: 1.65;
 }
 
 a {
@@ -119,119 +131,96 @@ code, .font-mono {
   font-family: var(--font-mono);
 }
 
-/* Surface Cards & Panels */
-.card-panel {
+/* Surface Panel Base */
+.surface-panel {
   background: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
-.card-panel:hover {
-  border-color: var(--border-contrast);
+.surface-panel:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-md);
 }
 
-/* Badges & Technical Indicators */
-.badge-tag {
+/* Badges & Status Indicators */
+.pill-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 3px 8px;
-  border-radius: var(--radius-xs);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
   background: var(--bg-surface-subtle);
-  border: 1px solid var(--border-hairline);
+  border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
 }
 
-.status-indicator {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 2px 7px;
-  border-radius: var(--radius-xs);
-}
-
-.status-indicator::before {
-  content: "";
-  width: 6px;
-  height: 6px;
+.status-dot {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.status-indicator.active {
-  background: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.status-indicator.active::before {
-  background: #10b981;
-  box-shadow: 0 0 6px #10b981;
+.status-dot.active {
+  background: var(--accent-emerald);
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.15);
 }
 
-.status-indicator.complete {
-  background: rgba(56, 189, 248, 0.12);
-  color: #7dd3fc;
-  border: 1px solid rgba(56, 189, 248, 0.25);
-}
-.status-indicator.complete::before {
-  background: #38bdf8;
+.status-dot.prototype {
+  background: var(--accent-amber);
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.15);
 }
 
-.status-indicator.dev {
-  background: rgba(245, 158, 11, 0.12);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.25);
-}
-.status-indicator.dev::before {
-  background: #f59e0b;
+.status-dot.complete {
+  background: var(--accent-brand);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
 }
 
-/* Button System: Architectural & Direct */
+/* Button Component System */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 9px 18px;
-  border-radius: var(--radius-sm);
-  font-size: 0.88rem;
-  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 550;
   letter-spacing: -0.01em;
   cursor: pointer;
   transition: all var(--transition-fast);
   text-decoration: none;
+  user-select: none;
 }
 
 .btn-primary {
   background: var(--text-pure);
-  color: var(--bg-canvas);
+  color: #ffffff;
   border: 1px solid var(--text-pure);
+  box-shadow: var(--shadow-xs);
 }
 
 .btn-primary:hover {
-  background: #e2e8f0;
-  border-color: #e2e8f0;
+  background: #1e293b;
+  border-color: #1e293b;
+  box-shadow: var(--shadow-sm);
   transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background: var(--bg-surface-subtle);
+  background: var(--bg-surface);
   color: var(--text-primary);
-  border: 1px solid var(--border-contrast);
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-xs);
 }
 
 .btn-secondary:hover {
-  background: var(--bg-surface-hover);
+  background: var(--bg-surface-subtle);
   border-color: var(--border-strong);
   color: var(--text-pure);
   transform: translateY(-1px);
@@ -246,11 +235,14 @@ code, .font-mono {
 .btn-ghost:hover {
   background: var(--bg-surface-subtle);
   color: var(--text-pure);
-  border-color: var(--border-hairline);
 }
 
-/* Accessibility Focus States */
-:focus-visible {
-  outline: 2px solid var(--color-brand);
-  outline-offset: 2px;
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

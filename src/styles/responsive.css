@@ -1,46 +1,44 @@
 /* ==========================================================================
-   Hukam Labs — Responsive Media Queries & Mobile System
+   Hukam Labs — Responsive Media Queries & Mobile Experience (Light / White)
    ========================================================================== */
 
 /* ---------- Tablet (< 1024px) ---------- */
 @media (max-width: 1024px) {
   .hero-main-title {
-    font-size: 3rem;
+    font-size: 3.4rem;
   }
 
-  .spec-bar {
+  .hero-stats-strip {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .showcase-inner {
+  .showcase-row,
+  .showcase-row.reversed {
     grid-template-columns: 1fr;
-    min-height: auto;
+    gap: 36px;
+    padding: 36px;
+    direction: ltr !important;
   }
 
-  .showcase-visual {
-    border-left: none;
-    border-top: 1px solid var(--border-hairline);
-    min-height: 380px;
+  .projects-masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .flagship-duo-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .catalog-grid {
+  .pipeline-strip {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .pillars-row {
+  .repo-details-display {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .project-content-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 40px;
   }
 
-  .footer-main-grid {
+  .footer-columns-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -52,41 +50,43 @@
   }
 
   .container {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .hero-section {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 
   .hero-main-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
-  .hero-mission-lead {
-    font-size: 1.05rem;
+  .hero-lead-text {
+    font-size: 1.1rem;
   }
 
-  .hero-cta-bar {
+  .hero-actions-row {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
 
-  .hero-cta-bar .btn {
+  .hero-actions-row .btn {
     width: 100%;
   }
 
-  .spec-bar {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-stats-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
-  .spec-cell {
+  .stat-chip {
     padding: 12px 14px;
   }
 
-  .spec-cell-value {
+  .stat-chip-val {
     font-size: 1rem;
   }
 
@@ -102,16 +102,16 @@
     top: var(--header-height);
     left: 0;
     width: 100%;
-    background: rgba(9, 11, 16, 0.98);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-contrast);
+    border-bottom: 1px solid var(--border-medium);
     flex-direction: column;
     align-items: flex-start;
     padding: 24px;
-    gap: 18px;
+    gap: 16px;
     display: none;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    box-shadow: var(--shadow-lg);
   }
 
   .nav-links.open {
@@ -119,9 +119,9 @@
   }
 
   .nav-item-link {
-    font-size: 1rem;
+    font-size: 1.05rem;
     width: 100%;
-    padding: 6px 0;
+    padding: 8px 0;
   }
 
   .nav-actions {
@@ -130,8 +130,8 @@
 
   .nav-links .mobile-actions {
     width: 100%;
-    padding-top: 14px;
-    border-top: 1px solid var(--border-hairline);
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -141,57 +141,68 @@
     width: 100%;
   }
 
-  /* Showcase adjustments */
-  .showcase-content {
+  /* Showcases */
+  .showcase-row,
+  .showcase-row.reversed {
     padding: 24px;
+    gap: 28px;
   }
 
-  .showcase-visual {
-    padding: 20px;
+  .slider-demo-wrapper {
+    height: 280px;
   }
 
-  .interactive-slider-box {
-    min-height: 280px;
-  }
-
-  .slider-drag-handle {
+  .slider-center-handle {
     width: 32px;
     height: 32px;
   }
 
   /* Catalog */
-  .catalog-toolbar {
+  .catalog-header-bar {
     flex-direction: column;
     align-items: stretch;
+    gap: 16px;
   }
 
-  .filter-group {
+  .catalog-filters-row {
     width: 100%;
     overflow-x: auto;
     padding-bottom: 4px;
   }
 
-  .search-field-wrapper {
+  .catalog-search-box {
     width: 100%;
   }
 
-  .catalog-grid {
+  .projects-masonry-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Editorial & Founder */
-  .editorial-grid {
+  /* Inside the Lab & Lifecycle */
+  .lab-story-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
 
-  .pillars-row {
+  .pipeline-strip {
     grid-template-columns: 1fr;
   }
 
-  .founder-profile-card {
+  /* Repo Inspector */
+  .repo-inspector-box {
+    padding: 20px;
+  }
+
+  .repo-details-display {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Founder Profile */
+  .founder-card-light {
     flex-direction: column;
     padding: 24px;
+    gap: 24px;
   }
 
   /* Project Detail Body */
@@ -207,7 +218,7 @@
   .install-command-box {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
   }
 
   .copy-cmd-btn {
@@ -215,12 +226,8 @@
     justify-content: center;
   }
 
-  .related-grid {
-    grid-template-columns: 1fr;
-  }
-
   /* Footer */
-  .footer-main-grid {
+  .footer-columns-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
@@ -228,5 +235,20 @@
   .footer-bottom-bar {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* ---------- Tiny Breakpoint (< 480px) ---------- */
+@media (max-width: 480px) {
+  .hero-main-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .statement-title {
+    font-size: 1.8rem;
   }
 }

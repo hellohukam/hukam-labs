@@ -4,6 +4,8 @@
  * Grounded in actual repository codebases, commit histories, and release notes.
  */
 
+export const SITE_URL = "https://labs.likehukam.com";
+
 export const LAB_PHILOSOPHY = "Useful software. Open by default.";
 
 export const FOUNDER_INFO = {
@@ -18,16 +20,16 @@ export const FOUNDER_INFO = {
 
 export const CATEGORIES = [
   { id: "all", label: "All Projects", count: 16 },
-  { id: "ai-media", label: "AI & Media", count: 7 },
+  { id: "ai", label: "AI & Media", count: 7 },
   { id: "developer", label: "Developer & Automation", count: 4 },
-  { id: "utilities", label: "Creative Utilities", count: 5 }
+  { id: "creative", label: "Creative Utilities", count: 5 }
 ];
 
-export const STATUS_LIST = [
-  { id: "all", label: "All Statuses" },
-  { id: "Active", label: "Active" },
-  { id: "Complete", label: "Complete" },
-  { id: "In Development", label: "In Development" }
+export const LAB_STAGES = [
+  { id: "concept", label: "Concept", count: 1 },
+  { id: "prototype", label: "Prototype", count: 1 },
+  { id: "active", label: "Active", count: 8 },
+  { id: "complete", label: "Complete", count: 6 }
 ];
 
 export const PROJECTS = [
@@ -35,24 +37,26 @@ export const PROJECTS = [
     id: "hukam-flow",
     slug: "hukam-flow",
     name: "Hukam Flow",
-    tagline: "Modern Chrome Manifest V3 batch automation and queue runner for Google Flow.",
+    tagline: "Chrome MV3 batch automation and queue runner for Google Flow.",
     category: "developer",
     categoryLabel: "Developer & Automation",
     status: "Active",
+    stage: "active",
     version: "v6.3.1",
     featured: true,
+    cardType: "terminal",
     badge: "Flagship Extension",
-    accentColor: "#10b981",
+    accentColor: "#059669",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/hukam-flow",
     releaseUrl: "https://github.com/hellohukam/hukam-flow/releases",
     projectRoute: "/projects/hukam-flow/",
     markdownUrl: "/projects/hukam-flow.md",
-    problem: "Automating creative prompt queues on flow.google.com normally hits synthetic event guards, Angular event cancellation, and unstable network race conditions.",
+    problem: "Automating prompt batches on Google Flow (flow.google.com) fails because Angular cancels synthetic DOM events, network timeouts break long runs, and manual downloads lose prompt associations.",
     solution: "A dedicated Chrome Side Panel orchestrator with MAIN-world Angular injection, real-time batchexecute API interception, tab-scoped isolation, jittered pacing, and auto-downloading.",
     description: "Production-ready Chrome Manifest V3 workflow automation tool for Google Flow (flow.google.com). Features a dedicated dockable Side Panel, MAIN-world page hooks for Angular trusted events, real-time API response interception (batchexecute, asb, trpc), jittered delay anti-bot pacing, smart Auto Mode with auto-download and failure retries, and prompt-indexed media naming.",
     highlights: [
-      "Dedicated Chrome Side Panel UI (Alt + Shift + F) keeping main tab view unobstructed",
+      "Dedicated Chrome Side Panel UI (Alt + Shift + F) keeping main tab viewport clear",
       "MAIN-world page hook injecting synthetic events that bypass Angular form guards",
       "Network interception of Google Flow internal batchexecute payloads",
       "Smart Auto Mode: Auto-run, wait, auto-download, and auto-retry on server error",
@@ -60,20 +64,23 @@ export const PROJECTS = [
       "100% private execution with zero telemetry, external logging, or analytics"
     ],
     tech: ["Chrome MV3", "JavaScript", "Side Panel API", "Alarms API", "Web Request API"],
-    installGuide: "Clone the repository, open chrome://extensions, enable Developer Mode, and click 'Load unpacked' pointing to the extension directory."
+    installGuide: "Clone repository, open chrome://extensions, enable Developer Mode, and click 'Load unpacked'.",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M7 8h10M7 12h7M7 16h4"></path><circle cx="16" cy="16" r="2" fill="#059669"></circle></svg>`
   },
   {
     id: "hukam-ai-upscaler",
     slug: "hukam-ai-upscaler",
     name: "Hukam AI Upscaler Pro",
-    tagline: "Hardware-accelerated Vulkan Real-ESRGAN super-resolution desktop application.",
-    category: "ai-media",
+    tagline: "Hardware-accelerated Vulkan Real-ESRGAN super-resolution desktop app for Windows x64.",
+    category: "ai",
     categoryLabel: "AI & Media",
     status: "Active",
+    stage: "active",
     version: "v1.0.0",
     featured: true,
+    cardType: "comparison",
     badge: "Standalone Executable",
-    accentColor: "#f59e0b",
+    accentColor: "#d97706",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/hukam-ai-upscaler",
     releaseUrl: "https://github.com/hellohukam/hukam-ai-upscaler/releases/download/v1.0.0/HukamUpscaler.exe",
@@ -91,20 +98,23 @@ export const PROJECTS = [
       "Zero dependency: portable executable requiring no Python or driver setup"
     ],
     tech: ["Python", "Real-ESRGAN", "Vulkan NCNN", "C++ Runtime", "PyInstaller"],
-    installGuide: "Download HukamUpscaler.exe from GitHub Releases and double-click to run. No installation or model download required."
+    installGuide: "Download HukamUpscaler.exe from GitHub Releases and double-click to run. No installation or model download required.",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`
   },
   {
     id: "svg-magic-cleaner",
     slug: "svg-magic-cleaner",
     name: "SVG Magic Cleaner",
     tagline: "100% private, browser-based AI background remover and raster-to-SVG vectorizer.",
-    category: "ai-media",
+    category: "ai",
     categoryLabel: "AI & Media",
     status: "Active",
+    stage: "active",
     version: "v1.0.0",
     featured: true,
+    cardType: "interactive",
     badge: "WebGPU In-Browser",
-    accentColor: "#06b6d4",
+    accentColor: "#0891b2",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/svg-magic-cleaner",
     releaseUrl: "https://github.com/hellohukam/svg-magic-cleaner",
@@ -122,20 +132,23 @@ export const PROJECTS = [
       "Batch queue processing with individual and ZIP download options"
     ],
     tech: ["React 18", "TypeScript", "WebGPU", "Transformers.js", "Vite", "Tailwind CSS"],
-    installGuide: "git clone https://github.com/hellohukam/svg-magic-cleaner.git && cd svg-magic-cleaner && npm install && npm run dev"
+    installGuide: "git clone https://github.com/hellohukam/svg-magic-cleaner.git && cd svg-magic-cleaner && npm install && npm run dev",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path><circle cx="12" cy="12" r="3"></circle></svg>`
   },
   {
     id: "ai-image-forensic-repair",
     slug: "ai-image-forensic-repair",
     name: "AI Image Forensic Repair",
-    tagline: "Lossless pixel reconstruction utility for corrupted and truncated AI outputs.",
-    category: "ai-media",
+    tagline: "Lossless pixel reconstruction utility resolving corrupt AI headers & Illustrator import errors.",
+    category: "ai",
     categoryLabel: "AI & Media",
     status: "Active",
+    stage: "active",
     version: "v1.1.0",
     featured: true,
+    cardType: "diagnostic",
     badge: "Binary Forensics",
-    accentColor: "#f43f5e",
+    accentColor: "#e11d48",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/ai-image-forensic-repair",
     releaseUrl: "https://github.com/hellohukam/ai-image-forensic-repair/releases",
@@ -153,20 +166,23 @@ export const PROJECTS = [
       "Standalone Windows executable requiring no external Python dependencies"
     ],
     tech: ["Python", "Pillow", "Binary Forensics", "Tkinter", "Standalone .EXE"],
-    installGuide: "Download ImageRepairTool.exe from GitHub Releases and run directly on Windows x64."
+    installGuide: "Download ImageRepairTool.exe from GitHub Releases and run directly on Windows x64.",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>`
   },
   {
     id: "vector-craft-studio",
     slug: "vector-craft-studio",
     name: "Vector Craft Studio",
     tagline: "Interactive multi-layer image vectorizer with pure TypeScript Potrace Bézier tracing.",
-    category: "ai-media",
+    category: "ai",
     categoryLabel: "AI & Media",
     status: "Active",
+    stage: "active",
     version: "v1.0.0",
     featured: false,
+    cardType: "interactive",
     badge: "Vector Studio",
-    accentColor: "#8b5cf6",
+    accentColor: "#7c3aed",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/vector-craft-studio",
     releaseUrl: "https://github.com/hellohukam/vector-craft-studio",
@@ -183,20 +199,23 @@ export const PROJECTS = [
       "Tuning sliders for despeckle, noise filtering, and corner threshold smoothing"
     ],
     tech: ["React 18", "TypeScript", "Potrace", "Canvas API", "Vite", "Tailwind CSS"],
-    installGuide: "git clone https://github.com/hellohukam/vector-craft-studio.git && cd vector-craft-studio && npm install && npm run dev"
+    installGuide: "git clone https://github.com/hellohukam/vector-craft-studio.git && cd vector-craft-studio && npm install && npm run dev",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="18" r="3"></circle><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"></line><path d="M12 3a9 9 0 0 1 9 9"></path></svg>`
   },
   {
     id: "birefnet-bg-remover",
     slug: "birefnet-bg-remover",
     name: "BiRefNet Pro BG Remover",
     tagline: "Desktop deep learning background remover powered by BiRefNet with DirectML.",
-    category: "ai-media",
+    category: "ai",
     categoryLabel: "AI & Media",
     status: "Active",
+    stage: "active",
     version: "v1.0.0",
     featured: false,
+    cardType: "image",
     badge: "DirectML GPU",
-    accentColor: "#a855f7",
+    accentColor: "#9333ea",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/birefnet-bg-remover",
     releaseUrl: "https://github.com/hellohukam/birefnet-bg-remover/releases",
@@ -213,7 +232,8 @@ export const PROJECTS = [
       "Direct export of clean transparent PNGs"
     ],
     tech: ["Python", "ONNX Runtime", "DirectML", "BiRefNet", "Tkinter"],
-    installGuide: "Download BiRefNetProRemover.exe and optional birefnet-general.onnx model file from Releases."
+    installGuide: "Download BiRefNetProRemover.exe and optional birefnet-general.onnx model file from Releases.",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg>`
   },
   {
     id: "ai-prompt-exif-extractor",
@@ -223,10 +243,12 @@ export const PROJECTS = [
     category: "developer",
     categoryLabel: "Developer & Automation",
     status: "Active",
+    stage: "active",
     version: "v1.0.0",
     featured: false,
+    cardType: "terminal",
     badge: "Prompt Forensics",
-    accentColor: "#0ea5e9",
+    accentColor: "#0284c7",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/ai-prompt-exif-extractor",
     releaseUrl: "https://github.com/hellohukam/ai-prompt-exif-extractor/releases",
@@ -243,7 +265,8 @@ export const PROJECTS = [
       "Thread-safe dark GUI with real-time extraction logs"
     ],
     tech: ["Python", "EXIF Parser", "PNG Chunk Reader", "Tkinter", "PyInstaller"],
-    installGuide: "Download PromptExtractor.exe from GitHub Releases and select your target image directory."
+    installGuide: "Download PromptExtractor.exe from GitHub Releases and select your target image directory.",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>`
   },
   {
     id: "batch-svg-sanitizer",
@@ -253,10 +276,12 @@ export const PROJECTS = [
     category: "developer",
     categoryLabel: "Developer & Automation",
     status: "Active",
+    stage: "active",
     version: "v1.0.0",
     featured: false,
+    cardType: "technical",
     badge: "Production Sanitizer",
-    accentColor: "#14b8a6",
+    accentColor: "#0d9488",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/batch-svg-sanitizer",
     releaseUrl: "https://github.com/hellohukam/batch-svg-sanitizer/releases",
@@ -273,20 +298,23 @@ export const PROJECTS = [
       "Real-time file size savings analytics and error reporting"
     ],
     tech: ["Python", "XML ElementTree", "Regex Optimizer", "Tkinter", "PyInstaller"],
-    installGuide: "Download BatchSVGSanitizer.exe from GitHub Releases or run via Python: python src/main.py."
+    installGuide: "Download BatchSVGSanitizer.exe from GitHub Releases or run via Python: python src/main.py.",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`
   },
   {
     id: "hukam-ai-creative-studio",
     slug: "hukam-ai-creative-studio",
     name: "Hukam AI Creative Studio",
     tagline: "Full-stack FLUX.1 Schnell image studio with multi-key rotation and persistent gallery.",
-    category: "ai-media",
+    category: "ai",
     categoryLabel: "AI & Media",
     status: "In Development",
+    stage: "prototype",
     version: "v0.9.0",
     featured: false,
+    cardType: "image",
     badge: "Full-Stack Studio",
-    accentColor: "#ec4899",
+    accentColor: "#db2777",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/hukam-ai-creative-studio",
     releaseUrl: "https://github.com/hellohukam/hukam-ai-creative-studio",
@@ -302,20 +330,23 @@ export const PROJECTS = [
       "Bulk and single session ZIP downloads with prompt metadata sidecars"
     ],
     tech: ["React 18", "TypeScript", "Express", "Drizzle ORM", "PostgreSQL", "FLUX.1"],
-    installGuide: "git clone https://github.com/hellohukam/hukam-ai-creative-studio.git && npm install && npm run dev"
+    installGuide: "git clone https://github.com/hellohukam/hukam-ai-creative-studio.git && npm install && npm run dev",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>`
   },
   {
     id: "image-color-palette-extractor",
     slug: "image-color-palette-extractor",
     name: "Color Palette Extractor Pro",
     tagline: "High-speed Octree color quantization tool extracting dominant HEX palettes in bulk.",
-    category: "utilities",
+    category: "creative",
     categoryLabel: "Creative Utilities",
     status: "Active",
+    stage: "active",
     version: "v1.0.0",
     featured: false,
+    cardType: "technical",
     badge: "Color Clustering",
-    accentColor: "#eab308",
+    accentColor: "#ca8a04",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/image-color-palette-extractor",
     releaseUrl: "https://github.com/hellohukam/image-color-palette-extractor/releases",
@@ -332,7 +363,8 @@ export const PROJECTS = [
       "100% offline portable binary requiring no Python runtime"
     ],
     tech: ["Python", "Pillow", "Octree Quantization", "Tkinter", "PyInstaller"],
-    installGuide: "Download PaletteExtractor.exe from Releases and run directly on Windows."
+    installGuide: "Download PaletteExtractor.exe from Releases and run directly on Windows.",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5" fill="#ca8a04"></circle><circle cx="17.5" cy="10.5" r=".5" fill="#ca8a04"></circle><circle cx="8.5" cy="7.5" r=".5" fill="#ca8a04"></circle><circle cx="6.5" cy="12.5" r=".5" fill="#ca8a04"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>`
   },
   {
     id: "hukam-automation-tools",
@@ -342,10 +374,12 @@ export const PROJECTS = [
     category: "developer",
     categoryLabel: "Developer & Automation",
     status: "Complete",
+    stage: "complete",
     version: "v1.0.0",
     featured: false,
+    cardType: "terminal",
     badge: "Pipeline Automation",
-    accentColor: "#64748b",
+    accentColor: "#475569",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/hukam-automation-tools",
     releaseUrl: "https://github.com/hellohukam/hukam-automation-tools",
@@ -360,20 +394,23 @@ export const PROJECTS = [
       "Automated tag injection and catalog organization"
     ],
     tech: ["Python", "CLI Tooling", "Batch Processing"],
-    installGuide: "git clone https://github.com/hellohukam/hukam-automation-tools.git && python -m pip install -r requirements.txt"
+    installGuide: "git clone https://github.com/hellohukam/hukam-automation-tools.git && python -m pip install -r requirements.txt",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>`
   },
   {
     id: "vector-metadata-injector",
     slug: "vector-metadata-injector",
     name: "Vector Metadata Injector",
     tagline: "Injects keywords, titles, and copyright metadata into vector files for stock pipelines.",
-    category: "utilities",
+    category: "creative",
     categoryLabel: "Creative Utilities",
     status: "Complete",
+    stage: "complete",
     version: "v1.0.0",
     featured: false,
+    cardType: "technical",
     badge: "Stock Workflow",
-    accentColor: "#38bdf8",
+    accentColor: "#0284c7",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/vector-metadata-injector",
     releaseUrl: "https://github.com/hellohukam/vector-metadata-injector",
@@ -388,20 +425,23 @@ export const PROJECTS = [
       "Preserves existing XML styling and coordinate definitions"
     ],
     tech: ["Python", "SVG XML Metadata", "Stock Automation"],
-    installGuide: "python inject_metadata.py --input ./vectors --csv metadata.csv"
+    installGuide: "python inject_metadata.py --input ./vectors --csv metadata.csv",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>`
   },
   {
     id: "stock-metadata-csv-generator",
     slug: "stock-metadata-csv-generator",
     name: "Stock Metadata CSV Generator",
     tagline: "Parses media libraries and generates submission CSVs for Adobe Stock & Shutterstock.",
-    category: "utilities",
+    category: "creative",
     categoryLabel: "Creative Utilities",
     status: "Complete",
+    stage: "complete",
     version: "v1.0.0",
     featured: false,
+    cardType: "technical",
     badge: "Marketplace Tool",
-    accentColor: "#22c55e",
+    accentColor: "#16a34a",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/stock-metadata-csv-generator",
     releaseUrl: "https://github.com/hellohukam/stock-metadata-csv-generator",
@@ -416,20 +456,23 @@ export const PROJECTS = [
       "Extracts titles, descriptions, and comma-separated keyword arrays"
     ],
     tech: ["Python", "CSV Generator", "Stock Pipeline"],
-    installGuide: "python generate_csv.py --dir ./assets --target adobe_stock"
+    installGuide: "python generate_csv.py --dir ./assets --target adobe_stock",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="16" y2="17"></line></svg>`
   },
   {
     id: "smart-asset-organizer",
     slug: "smart-asset-organizer",
     name: "Smart Asset Organizer",
     tagline: "Batch file classifier and folder organization utility for media workflows.",
-    category: "utilities",
+    category: "creative",
     categoryLabel: "Creative Utilities",
     status: "Complete",
+    stage: "complete",
     version: "v1.0.0",
     featured: false,
+    cardType: "technical",
     badge: "File Management",
-    accentColor: "#94a3b8",
+    accentColor: "#64748b",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/smart-asset-organizer",
     releaseUrl: "https://github.com/hellohukam/smart-asset-organizer",
@@ -444,20 +487,23 @@ export const PROJECTS = [
       "Fast directory restructuring for high-volume creative assets"
     ],
     tech: ["Python", "File System Automation"],
-    installGuide: "python organize.py --source ./Downloads --output ./Archive"
+    installGuide: "python organize.py --source ./Downloads --output ./Archive",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>`
   },
   {
     id: "u2net-bg-remover",
     slug: "u2net-bg-remover",
     name: "U2Net BG Remover",
     tagline: "Offline desktop background remover using the classic U2Net salient model.",
-    category: "ai-media",
+    category: "ai",
     categoryLabel: "AI & Media",
     status: "Complete",
+    stage: "complete",
     version: "v1.0.0",
     featured: false,
+    cardType: "image",
     badge: "Lightweight ML",
-    accentColor: "#6366f1",
+    accentColor: "#4f46e5",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/u2net-bg-remover",
     releaseUrl: "https://github.com/hellohukam/u2net-bg-remover",
@@ -472,20 +518,23 @@ export const PROJECTS = [
       "Offline local processing with transparent PNG output"
     ],
     tech: ["Python", "PyTorch", "U2Net", "Pillow"],
-    installGuide: "git clone https://github.com/hellohukam/u2net-bg-remover.git && python -m pip install -r requirements.txt"
+    installGuide: "git clone https://github.com/hellohukam/u2net-bg-remover.git && python -m pip install -r requirements.txt",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>`
   },
   {
     id: "yt-audio-extractor-gui",
     slug: "yt-audio-extractor-gui",
     name: "YT Audio Extractor GUI",
     tagline: "Desktop GUI utility for extracting high-quality audio with metadata.",
-    category: "utilities",
+    category: "creative",
     categoryLabel: "Creative Utilities",
     status: "Complete",
+    stage: "complete",
     version: "v1.0.0",
     featured: false,
+    cardType: "technical",
     badge: "Audio Utility",
-    accentColor: "#ef4444",
+    accentColor: "#dc2626",
     license: "MIT",
     githubUrl: "https://github.com/hellohukam/yt-audio-extractor-gui",
     releaseUrl: "https://github.com/hellohukam/yt-audio-extractor-gui",
@@ -500,6 +549,7 @@ export const PROJECTS = [
       "Simple, ad-free desktop interface"
     ],
     tech: ["Python", "Tkinter", "Media Processing"],
-    installGuide: "python -m pip install -r requirements.txt && python app.py"
+    installGuide: "python -m pip install -r requirements.txt && python app.py",
+    logoSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>`
   }
 ];
