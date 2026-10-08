@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Hukam Labs — Responsive Media Queries & Mobile Navigation
+   ========================================================================== */
+
+/* ---------- Tablet Breakpoint (< 1024px) ---------- */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .telemetry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .card-spotlight {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px;
+  }
+
+  .card-featured {
+    grid-column: span 12;
+  }
+
+  .projects-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .slider-container {
+    height: 400px;
+  }
+}
+
+/* ---------- Mobile Breakpoint (< 768px) ---------- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .telemetry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .telemetry-number {
+    font-size: 1.25rem;
+  }
+
+  .telemetry-label {
+    font-size: 0.72rem;
+  }
+
+  /* Mobile Navigation Drawer */
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: rgba(7, 9, 14, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-medium);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 20px;
+    display: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+
+  .nav-menu .nav-actions-mobile {
+    display: block;
+    width: 100%;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .nav-menu .nav-actions-mobile .btn-github {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  /* Showcase slider */
+  .slider-container {
+    height: 280px;
+  }
+
+  .slider-handle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .slider-badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    bottom: 10px;
+  }
+
+  .comparison-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .comparison-caption {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Catalog Directory */
+  .directory-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-tabs {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    justify-content: flex-start;
+  }
+
+  .search-box {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .projects-catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .about-card {
+    padding: 24px;
+  }
+
+  .github-banner {
+    padding: 32px 20px;
+  }
+
+  .github-banner h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* ---------- Tiny Breakpoint (< 480px) ---------- */
+@media (max-width: 480px) {
+  .telemetry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-pill {
+    font-size: 0.72rem;
+  }
+
+  .spotlight-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .spotlight-actions .btn-primary,
+  .spotlight-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

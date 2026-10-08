@@ -1,0 +1,33 @@
+{
+  "name": "hukam-labs",
+  "version": "1.0.0",
+  "description": "Official website for Hukam Labs — an independent open-source technology lab building practical AI, creative, developer, and automation tools.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellohukam/hukam-labs.git"
+  },
+  "keywords": [
+    "hukam-labs",
+    "open-source",
+    "ai-tools",
+    "vulkan-upscaler",
+    "browser-automation",
+    "developer-tools",
+    "hukam-flow"
+  ],
+  "author": "Waleed Ahmad <hello@theRedLikeHukum.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hellohukam/hukam-labs/issues"
+  },
+  "homepage": "https://github.com/hellohukam/hukam-labs#readme",
+  "devDependencies": {
+    "vite": "^8.3.3"
+  }
+}
