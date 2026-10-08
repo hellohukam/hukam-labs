@@ -1,0 +1,8 @@
+# robots.txt for Hukam Labs (https://labs.likehukam.com)
+# All tools and documentation are public and open for indexing.
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://labs.likehukam.com/sitemap.xml

@@ -1,0 +1,46 @@
+# Hukam Labs
+
+> An independent open-source technology lab building practical AI, creative, developer, and automation tools.
+
+Hukam Labs is an independent technology initiative founded and engineered by Waleed Ahmad ("Hukam"), an independent software developer and AI pipeline specialist based in Pakistan (PSEB Registered Freelancer).
+
+The lab's core philosophy is: **"Useful software should be accessible."**
+
+We engineer standalone desktop applications, browser extensions, and local AI pipelines that run directly on consumer hardware — without forced subscriptions, telemetry tracking, or artificial paywalls. All projects are published openly on GitHub under permissive licenses (MIT and GPL).
+
+## Contact & Profile Information
+
+- Website: https://labs.likehukam.com/
+- GitHub Organization/Profile: https://github.com/hellohukam
+- Founder Personal Portfolio: https://likehukam.com
+- Contact Email: hello@theRedLikeHukum.com
+- Sitemap: https://labs.likehukam.com/sitemap.xml
+
+## Flagship & Core Projects
+
+- [Hukam Flow](https://labs.likehukam.com/projects/hukam-flow/): Modern Chrome Manifest V3 workflow automation tool and queue runner for Google Flow (flow.google.com). Features a dedicated Chrome Side Panel, MAIN-world Angular event synthesis, real-time internal batchexecute API interception, tab-scoped state isolation, and automated prompt-indexed downloads. Status: Active (v6.3.1). Repository: https://github.com/hellohukam/hukam-flow. License: MIT.
+- [Hukam AI Upscaler Pro](https://labs.likehukam.com/projects/hukam-ai-upscaler/): Hardware-accelerated desktop super-resolution software for Windows x64 powered by Real-ESRGAN Vulkan NCNN. Pre-bundles neural weights (realesrgan-x4plus, anime, videov3) in a standalone 55MB executable without requiring Python or CUDA drivers. Supports crash-resilient resume logging and low-VRAM tile splitting. Status: Active (v1.0.0). Repository: https://github.com/hellohukam/hukam-ai-upscaler. License: MIT.
+- [SVG Magic Cleaner](https://labs.likehukam.com/projects/svg-magic-cleaner/): 100% private in-browser AI background remover and raster-to-SVG vectorizer using Hugging Face Transformers.js and WebGPU with WASM fallback. Runs briaai/RMBG-1.4 directly in the browser with zero cloud uploads. Status: Active (v1.0.0). Repository: https://github.com/hellohukam/svg-magic-cleaner. License: MIT.
+- [AI Image Forensic Repair](https://labs.likehukam.com/projects/ai-image-forensic-repair/): Standalone Windows desktop restoration utility solving the Adobe Illustrator 'File format cannot be placed' error caused by malformed AI generator headers (Midjourney, ComfyUI, Automatic1111). Rebuilds missing IEND/EOI markers and normalizes sRGB/RGBA buffers. Status: Active (v1.1.0). Repository: https://github.com/hellohukam/ai-image-forensic-repair. License: MIT.
+- [Vector Craft Studio](https://labs.likehukam.com/projects/vector-craft-studio/): Full-stack raster-to-vector studio featuring multi-layer color quantization (2–32 discrete layers) and pure TypeScript Potrace Bézier curve tracing with real-time split-screen previews. Status: Active (v1.0.0). Repository: https://github.com/hellohukam/vector-craft-studio. License: MIT.
+- [BiRefNet Pro BG Remover](https://labs.likehukam.com/projects/birefnet-bg-remover/): High-resolution desktop background removal tool powered by the BiRefNet bilateral reference network with Windows DirectML GPU acceleration for fine hair and alpha transparency. Status: Active (v1.0.0). Repository: https://github.com/hellohukam/birefnet-bg-remover. License: MIT.
+- [AI Prompt EXIF Extractor Pro](https://labs.likehukam.com/projects/ai-prompt-exif-extractor/): Batch desktop utility parsing PNG and JPG chunks to extract embedded generation prompts, A1111 parameters, seeds, and ComfyUI workflow JSON graphs. Status: Active (v1.0.0). Repository: https://github.com/hellohukam/ai-prompt-exif-extractor. License: MIT.
+- [Batch SVG Sanitizer Pro](https://labs.likehukam.com/projects/batch-svg-sanitizer/): Headless Windows batch tool stripping proprietary editor namespaces (Illustrator, Inkscape, Figma), redundant metadata, and orphaned clipPaths to optimize SVGs for stock marketplaces and web deployment. Status: Active (v1.0.0). Repository: https://github.com/hellohukam/batch-svg-sanitizer. License: MIT.
+
+## Additional Creative Utilities
+
+- [Hukam AI Creative Studio](https://github.com/hellohukam/hukam-ai-creative-studio): Full-stack image studio powered by Together AI (FLUX.1 Schnell) with a 4-key rotation pool and PostgreSQL gallery. Status: In Development.
+- [Color Palette Extractor Pro](https://github.com/hellohukam/image-color-palette-extractor): High-speed Octree color quantization tool extracting dominant HEX palettes in bulk. Status: Active.
+- [Hukam Automation Tools](https://github.com/hellohukam/hukam-automation-tools): Digital creator CLI automation suite for batch asset repair, FLUX, and metadata. Status: Complete.
+- [Vector Metadata Injector](https://github.com/hellohukam/vector-metadata-injector): Embeds stock marketplace compliant IPTC/XMP/Dublin Core metadata directly into vector files. Status: Complete.
+- [Stock Metadata CSV Generator](https://github.com/hellohukam/stock-metadata-csv-generator): Scans media directories and compiles pre-formatted submission CSVs for Adobe Stock and Shutterstock. Status: Complete.
+- [Smart Asset Organizer](https://github.com/hellohukam/smart-asset-organizer): Rule-based directory classifier organizing large unstructured creative asset downloads. Status: Complete.
+- [U2Net BG Remover](https://github.com/hellohukam/u2net-bg-remover): Lightweight CPU-optimized salient background removal desktop tool. Status: Complete.
+- [YT Audio Extractor GUI](https://github.com/hellohukam/yt-audio-extractor-gui): Desktop GUI extracting lossless audio streams with ID3 metadata preservation. Status: Complete.
+
+## Engineering Principles
+
+1. **Local & Private Execution**: Processing happens locally on the user's GPU, CPU, or browser sandbox. No user data, prompts, or images are transmitted to external servers.
+2. **Accessible by Default**: Useful tools are distributed without forced subscription tiers, artificial feature gating, or telemetry trackers.
+3. **Genuine Open Source**: Codebases are hosted on GitHub under permissive licenses (MIT and GPL). Anyone may inspect, audit, fork, or build from source.
+4. **Engineering over Hype**: Projects are built to solve real workflow bottlenecks, not to market speculative AI promises.

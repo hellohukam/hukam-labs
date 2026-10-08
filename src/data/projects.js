@@ -1,13 +1,15 @@
 /**
- * Hukam Labs - Master Repository & Project Catalog
+ * Hukam Labs — Master Repository & Project Catalog
  * Real data audited directly from https://github.com/hellohukam
+ * Grounded in actual repository codebases, commit histories, and release notes.
  */
 
-export const LAB_PHILOSOPHY = "Useful software should be accessible.";
+export const LAB_PHILOSOPHY = "Useful software. Open by default.";
 
 export const FOUNDER_INFO = {
   name: "Waleed Ahmad",
-  role: "Independent Developer & AI Pipeline Specialist",
+  handle: "hellohukam",
+  role: "Independent Software Developer & AI Pipeline Specialist",
   credentials: "PSEB Registered Freelancer",
   portfolioUrl: "https://likehukam.com",
   githubUrl: "https://github.com/hellohukam",
@@ -16,14 +18,22 @@ export const FOUNDER_INFO = {
 
 export const CATEGORIES = [
   { id: "all", label: "All Projects", count: 16 },
-  { id: "ai-creative", label: "AI & Creative Tools", count: 7 },
+  { id: "ai-media", label: "AI & Media", count: 7 },
   { id: "developer", label: "Developer & Automation", count: 4 },
   { id: "utilities", label: "Creative Utilities", count: 5 }
+];
+
+export const STATUS_LIST = [
+  { id: "all", label: "All Statuses" },
+  { id: "Active", label: "Active" },
+  { id: "Complete", label: "Complete" },
+  { id: "In Development", label: "In Development" }
 ];
 
 export const PROJECTS = [
   {
     id: "hukam-flow",
+    slug: "hukam-flow",
     name: "Hukam Flow",
     tagline: "Modern Chrome Manifest V3 batch automation and queue runner for Google Flow.",
     category: "developer",
@@ -31,164 +41,183 @@ export const PROJECTS = [
     status: "Active",
     version: "v6.3.1",
     featured: true,
-    badge: "Core Automation Tool",
-    iconType: "flow",
+    badge: "Flagship Extension",
+    accentColor: "#10b981",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/hukam-flow",
+    releaseUrl: "https://github.com/hellohukam/hukam-flow/releases",
+    projectRoute: "/projects/hukam-flow/",
+    markdownUrl: "/projects/hukam-flow.md",
+    problem: "Automating creative prompt queues on flow.google.com normally hits synthetic event guards, Angular event cancellation, and unstable network race conditions.",
+    solution: "A dedicated Chrome Side Panel orchestrator with MAIN-world Angular injection, real-time batchexecute API interception, tab-scoped isolation, jittered pacing, and auto-downloading.",
     description: "Production-ready Chrome Manifest V3 workflow automation tool for Google Flow (flow.google.com). Features a dedicated dockable Side Panel, MAIN-world page hooks for Angular trusted events, real-time API response interception (batchexecute, asb, trpc), jittered delay anti-bot pacing, smart Auto Mode with auto-download and failure retries, and prompt-indexed media naming.",
     highlights: [
-      "Dedicated Chrome Side Panel UI (Alt + Shift + F)",
-      "MAIN-world page hook bypassing Angular event restrictions",
-      "Network interception of Google Flow internal batchexecute API",
-      "Smart Auto Mode: Auto-run, wait, auto-download, and auto-retry",
-      "Multi-tab isolation with tab-scoped storage keys",
-      "100% local execution with zero tracking or telemetry"
+      "Dedicated Chrome Side Panel UI (Alt + Shift + F) keeping main tab view unobstructed",
+      "MAIN-world page hook injecting synthetic events that bypass Angular form guards",
+      "Network interception of Google Flow internal batchexecute payloads",
+      "Smart Auto Mode: Auto-run, wait, auto-download, and auto-retry on server error",
+      "Multi-tab isolation with tab-scoped storage keys avoiding state collisions",
+      "100% private execution with zero telemetry, external logging, or analytics"
     ],
-    tech: ["Chrome MV3", "JavaScript", "Side Panel API", "Alarms", "Google Flow"],
-    githubUrl: "https://github.com/hellohukam/hukam-flow",
-    releaseUrl: "https://github.com/hellohukam/hukam-flow/releases"
+    tech: ["Chrome MV3", "JavaScript", "Side Panel API", "Alarms API", "Web Request API"],
+    installGuide: "Clone the repository, open chrome://extensions, enable Developer Mode, and click 'Load unpacked' pointing to the extension directory."
   },
   {
     id: "hukam-ai-upscaler",
+    slug: "hukam-ai-upscaler",
     name: "Hukam AI Upscaler Pro",
     tagline: "Hardware-accelerated Vulkan Real-ESRGAN super-resolution desktop application.",
-    category: "ai-creative",
-    categoryLabel: "AI & Creative Tools",
+    category: "ai-media",
+    categoryLabel: "AI & Media",
     status: "Active",
     version: "v1.0.0",
     featured: true,
     badge: "Standalone Executable",
-    iconType: "upscaler",
+    accentColor: "#f59e0b",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/hukam-ai-upscaler",
+    releaseUrl: "https://github.com/hellohukam/hukam-ai-upscaler/releases/download/v1.0.0/HukamUpscaler.exe",
+    projectRoute: "/projects/hukam-ai-upscaler/",
+    markdownUrl: "/projects/hukam-ai-upscaler.md",
+    problem: "Most AI upscaling tools require either complex Python/CUDA environments with massive driver dependencies or expensive cloud subscriptions with privacy concerns.",
+    solution: "A zero-dependency 55MB standalone Windows executable powered by Real-ESRGAN Vulkan NCNN that harnesses NVIDIA, AMD, and Intel GPUs natively without CUDA.",
     description: "High-performance desktop AI image and video upscaler for Windows x64 powered by Real-ESRGAN Vulkan NCNN. Hardware-accelerated across NVIDIA, AMD Radeon, and Intel GPUs without requiring proprietary CUDA drivers. Features crash-resilient resume logging, low-VRAM tile splitting, and pre-bundled neural network weights.",
     highlights: [
-      "Real-ESRGAN Vulkan NCNN hardware acceleration",
-      "Embedded neural models: realesrgan-x4plus, anime, and videov3",
-      "Multi-format batch processing (PNG, JPG, WebP, MP4, MKV)",
-      "Crash-resilient resume logging (never reprocesses finished items)",
-      "Low-VRAM tile splitting preventing OOM on laptop GPUs",
-      "100% standalone 55MB executable with zero external model downloads"
+      "Real-ESRGAN Vulkan NCNN hardware acceleration across NVIDIA, AMD, and Intel GPUs",
+      "Pre-bundled neural weights (realesrgan-x4plus, anime, videov3) in a 55MB binary",
+      "Crash-resilient resume logging (upscaler_resume_log.json) to survive system restarts",
+      "Low-VRAM tile splitting preventing Out-Of-Memory errors on laptop GPUs",
+      "Batch folder processing for images (.png, .jpg, .webp) and frame-by-frame video (.mp4, .mkv)",
+      "Zero dependency: portable executable requiring no Python or driver setup"
     ],
     tech: ["Python", "Real-ESRGAN", "Vulkan NCNN", "C++ Runtime", "PyInstaller"],
-    githubUrl: "https://github.com/hellohukam/hukam-ai-upscaler",
-    releaseUrl: "https://github.com/hellohukam/hukam-ai-upscaler/releases/download/v1.0.0/HukamUpscaler.exe"
+    installGuide: "Download HukamUpscaler.exe from GitHub Releases and double-click to run. No installation or model download required."
   },
   {
     id: "svg-magic-cleaner",
+    slug: "svg-magic-cleaner",
     name: "SVG Magic Cleaner",
     tagline: "100% private, browser-based AI background remover and raster-to-SVG vectorizer.",
-    category: "ai-creative",
-    categoryLabel: "AI & Creative Tools",
+    category: "ai-media",
+    categoryLabel: "AI & Media",
     status: "Active",
     version: "v1.0.0",
     featured: true,
-    badge: "In-Browser WebGPU",
-    iconType: "wand",
+    badge: "WebGPU In-Browser",
+    accentColor: "#06b6d4",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/svg-magic-cleaner",
+    releaseUrl: "https://github.com/hellohukam/svg-magic-cleaner",
+    projectRoute: "/projects/svg-magic-cleaner/",
+    markdownUrl: "/projects/svg-magic-cleaner.md",
+    problem: "Vectorizing bitmaps usually requires paid cloud APIs that upload sensitive graphics or bloated desktop software with steep learning curves.",
+    solution: "Runs briaai/RMBG-1.4 directly in the browser via WebGPU with WASM fallback, segmenting alpha masks and converting contours into clean SVG vector paths.",
     description: "Client-side AI background remover and raster-to-SVG vectorizer running entirely in the browser using Hugging Face Transformers.js and WebGPU. Executes briaai/RMBG-1.4 with zero server uploads, provides interactive before/after checkerboard comparisons, and generates clean scalable SVG vectors.",
     highlights: [
-      "In-browser RMBG-1.4 neural background removal",
-      "WebGPU acceleration with automatic WASM fallback",
-      "100% client-side privacy: zero image data leaves the device",
-      "Interactive side-by-side comparison slider",
-      "Bitmap to clean resolution-independent SVG vector paths",
-      "Batch queue processing with individual and ZIP download"
+      "In-browser RMBG-1.4 neural background removal via @huggingface/transformers",
+      "Hardware-accelerated WebGPU inference with automatic WebAssembly (WASM) fallback",
+      "100% client-side execution: zero pixel data leaves the user's browser",
+      "Bitmap to resolution-independent SVG vector path conversion",
+      "Interactive side-by-side comparison slider on transparency checkerboard",
+      "Batch queue processing with individual and ZIP download options"
     ],
     tech: ["React 18", "TypeScript", "WebGPU", "Transformers.js", "Vite", "Tailwind CSS"],
-    githubUrl: "https://github.com/hellohukam/svg-magic-cleaner",
-    releaseUrl: "https://github.com/hellohukam/svg-magic-cleaner"
+    installGuide: "git clone https://github.com/hellohukam/svg-magic-cleaner.git && cd svg-magic-cleaner && npm install && npm run dev"
   },
   {
     id: "ai-image-forensic-repair",
+    slug: "ai-image-forensic-repair",
     name: "AI Image Forensic Repair",
     tagline: "Lossless pixel reconstruction utility for corrupted and truncated AI outputs.",
-    category: "ai-creative",
-    categoryLabel: "AI & Creative Tools",
+    category: "ai-media",
+    categoryLabel: "AI & Media",
     status: "Active",
-    version: "v1.0.0",
+    version: "v1.1.0",
     featured: true,
-    badge: "Digital Forensics",
-    iconType: "repair",
+    badge: "Binary Forensics",
+    accentColor: "#f43f5e",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/ai-image-forensic-repair",
+    releaseUrl: "https://github.com/hellohukam/ai-image-forensic-repair/releases",
+    projectRoute: "/projects/ai-image-forensic-repair/",
+    markdownUrl: "/projects/ai-image-forensic-repair.md",
+    problem: "AI image generators often leave malformed EXIF headers, missing IEND/EOI markers, or unindexed color channels, causing Adobe Illustrator/Photoshop to reject files with 'File format cannot be placed'.",
+    solution: "Performs lossless pixel buffer reconstruction, strips corrupt metadata chunks, normalizes color spaces to sRGB/RGBA, and rebuilds valid container headers.",
     description: "Desktop image restoration utility solving the infamous 'File format cannot be placed' error when importing AI images (Midjourney, Stable Diffusion, ComfyUI) into Adobe Illustrator, Photoshop, or InDesign. Rebuilds missing IEND/EOI markers, strips malformed chunks, and normalizes sRGB/RGBA pixel buffers.",
     highlights: [
-      "Resolves Adobe Illustrator file import rejection errors",
-      "Lossless pixel buffer container reconstruction",
-      "Strips malformed metadata chunks and damaged EOF markers",
-      "Normalizes color profiles to standard sRGB / RGBA",
-      "Recursive batch subfolder processing",
-      "Automatic timestamped safety backups before modification"
+      "Directly fixes Adobe Illustrator 'File format cannot be placed' import errors",
+      "Lossless pixel buffer container reconstruction with zero visual degradation",
+      "Strips damaged metadata chunks, corrupted EXIF blocks, and missing EOF markers",
+      "Normalizes color spaces into standardized sRGB and RGBA profiles",
+      "Recursive batch directory scanning with safety backup mode",
+      "Standalone Windows executable requiring no external Python dependencies"
     ],
     tech: ["Python", "Pillow", "Binary Forensics", "Tkinter", "Standalone .EXE"],
-    githubUrl: "https://github.com/hellohukam/ai-image-forensic-repair",
-    releaseUrl: "https://github.com/hellohukam/ai-image-forensic-repair/releases"
+    installGuide: "Download ImageRepairTool.exe from GitHub Releases and run directly on Windows x64."
   },
   {
     id: "vector-craft-studio",
+    slug: "vector-craft-studio",
     name: "Vector Craft Studio",
-    tagline: "Interactive multi-layer image vectorizer with Potrace bezier curve tracing.",
-    category: "ai-creative",
-    categoryLabel: "AI & Creative Tools",
+    tagline: "Interactive multi-layer image vectorizer with pure TypeScript Potrace Bézier tracing.",
+    category: "ai-media",
+    categoryLabel: "AI & Media",
     status: "Active",
     version: "v1.0.0",
-    featured: true,
+    featured: false,
     badge: "Vector Studio",
-    iconType: "vector",
+    accentColor: "#8b5cf6",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/vector-craft-studio",
+    releaseUrl: "https://github.com/hellohukam/vector-craft-studio",
+    projectRoute: "/projects/vector-craft-studio/",
+    markdownUrl: "/projects/vector-craft-studio.md",
+    problem: "Converting full-color raster artwork into layered vectors traditionally requires proprietary desktop tools that produce disorganized, bloated single-layer paths.",
+    solution: "Decomposes raster images into distinct color layers (2–32 layers) using luminance quantization and pure TypeScript Potrace curve tracing with live split-screen preview.",
     description: "Interactive multi-layer image vectorizer and SVG generator. Employs color quantization and Potrace bezier curve algorithms to trace high-contrast raster bitmaps into clean, scalable SVG paths with real-time layer previews and SVG export.",
     highlights: [
-      "Color quantization into distinct vector layers",
-      "Potrace bezier curve smoothing algorithms",
-      "Real-time interactive canvas preview",
-      "Direct SVG path code inspection and export",
-      "Precision corner threshold and noise filter controls"
+      "Multi-layer color quantization decomposing artwork into 2 to 32 discrete color layers",
+      "Pure TypeScript Potrace curve tracer running in memory without native node-gyp bindings",
+      "Interactive color palette inspector with hex swatches and pixel coverage metrics",
+      "Live split-screen zoom and pan comparison between original bitmap and vector SVG",
+      "Tuning sliders for despeckle, noise filtering, and corner threshold smoothing"
     ],
     tech: ["React 18", "TypeScript", "Potrace", "Canvas API", "Vite", "Tailwind CSS"],
-    githubUrl: "https://github.com/hellohukam/vector-craft-studio",
-    releaseUrl: "https://github.com/hellohukam/vector-craft-studio"
+    installGuide: "git clone https://github.com/hellohukam/vector-craft-studio.git && cd vector-craft-studio && npm install && npm run dev"
   },
   {
     id: "birefnet-bg-remover",
+    slug: "birefnet-bg-remover",
     name: "BiRefNet Pro BG Remover",
     tagline: "Desktop deep learning background remover powered by BiRefNet with DirectML.",
-    category: "ai-creative",
-    categoryLabel: "AI & Creative Tools",
+    category: "ai-media",
+    categoryLabel: "AI & Media",
     status: "Active",
     version: "v1.0.0",
     featured: false,
     badge: "DirectML GPU",
-    iconType: "matting",
+    accentColor: "#a855f7",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/birefnet-bg-remover",
+    releaseUrl: "https://github.com/hellohukam/birefnet-bg-remover/releases",
+    projectRoute: "/projects/birefnet-bg-remover/",
+    markdownUrl: "/projects/birefnet-bg-remover.md",
+    problem: "Standard salient object detectors struggle with intricate hair strands, fur, glass transparency, and complex silhouettes, leaving noticeable halos.",
+    solution: "Integrates the state-of-the-art BiRefNet bilateral reference network with Windows DirectML GPU acceleration and multi-worker batch queuing.",
     description: "Desktop background removal tool powered by the BiRefNet bilateral reference deep learning model. Delivers hair-level precision edge matting with DirectML hardware acceleration and multi-core CPU support.",
     highlights: [
-      "BiRefNet bilateral reference neural segmentation",
-      "DirectX 12 DirectML GPU acceleration",
-      "High-precision edge and fine hair matting",
-      "Recursive batch folder queue with resume caching",
-      "Direct transparent PNG export"
+      "Sub-pixel edge precision capturing fine hair strands, fur, and glass transparency",
+      "Native Windows DirectML GPU acceleration supporting NVIDIA, AMD, and Intel Arc GPUs",
+      "Multi-worker batch queue with automatic CPU fallback",
+      "Intelligent resume caching to skip already-processed images on interruption",
+      "Direct export of clean transparent PNGs"
     ],
     tech: ["Python", "ONNX Runtime", "DirectML", "BiRefNet", "Tkinter"],
-    githubUrl: "https://github.com/hellohukam/birefnet-bg-remover",
-    releaseUrl: "https://github.com/hellohukam/birefnet-bg-remover/releases"
-  },
-  {
-    id: "hukam-ai-creative-studio",
-    name: "Hukam AI Creative Studio",
-    tagline: "Full-stack FLUX.1 Schnell image studio with multi-key rotation and gallery.",
-    category: "ai-creative",
-    categoryLabel: "AI & Creative Tools",
-    status: "In Development",
-    version: "v1.0.0",
-    featured: false,
-    badge: "Full-Stack Studio",
-    iconType: "studio",
-    description: "Full-stack generative AI image studio powered by Together AI's FLUX.1 Schnell engine. Built with an automated 4-key rotation pool with rate-limit cooldown recovery, batch prompt generation, image gallery, CORS proxy, and PostgreSQL persistence.",
-    highlights: [
-      "FLUX.1 Schnell generative image synthesis",
-      "Automated round-robin 4-key rotation pool",
-      "Rate-limit cooldown recovery (60s circuit breaker)",
-      "Persistent gallery with PostgreSQL and Drizzle ORM",
-      "Bulk and single session ZIP downloads"
-    ],
-    tech: ["React 18", "TypeScript", "Express", "Drizzle ORM", "PostgreSQL", "FLUX.1"],
-    githubUrl: "https://github.com/hellohukam/hukam-ai-creative-studio",
-    releaseUrl: "https://github.com/hellohukam/hukam-ai-creative-studio"
+    installGuide: "Download BiRefNetProRemover.exe and optional birefnet-general.onnx model file from Releases."
   },
   {
     id: "ai-prompt-exif-extractor",
+    slug: "ai-prompt-exif-extractor",
     name: "AI Prompt EXIF Extractor Pro",
     tagline: "Inspects PNG/JPG metadata to extract embedded prompts, A1111 tags, and ComfyUI graphs.",
     category: "developer",
@@ -197,21 +226,28 @@ export const PROJECTS = [
     version: "v1.0.0",
     featured: false,
     badge: "Prompt Forensics",
-    iconType: "terminal",
+    accentColor: "#0ea5e9",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/ai-prompt-exif-extractor",
+    releaseUrl: "https://github.com/hellohukam/ai-prompt-exif-extractor/releases",
+    projectRoute: "/projects/ai-prompt-exif-extractor/",
+    markdownUrl: "/projects/ai-prompt-exif-extractor.md",
+    problem: "Prompt parameters and model seeds embedded in AI images get scattered across divergent chunk types (tEXt, iTXt, UserComment, JSON graphs) that standard EXIF viewers fail to parse.",
+    solution: "A batch desktop utility that detects generator signatures (ComfyUI, Automatic1111, Midjourney, DALL-E) and extracts clean prompt texts and node graphs into structured text catalogs.",
     description: "Standalone desktop utility to inspect PNG, JPG, and WebP files generated by Midjourney, Stable Diffusion, ComfyUI, and DALL-E. Extracts embedded A1111 parameters, ComfyUI workflow JSON graphs, and EXIF UserComment chunks to text catalogs.",
     highlights: [
-      "Batch scans directories of AI-generated images",
-      "Parses A1111 generation parameters and negative prompts",
-      "Extracts embedded ComfyUI node graph JSON",
-      "Reads Midjourney and DALL-E EXIF UserComment chunks",
-      "Thread-safe dark GUI with progress tracker"
+      "Bulk directory scanner parsing hundreds of AI image files concurrently",
+      "Extracts full Stable Diffusion / Automatic1111 prompt parameters and negative prompts",
+      "Unpacks embedded ComfyUI node graphs and workflow JSON structures",
+      "Parses Midjourney and DALL-E EXIF UserComment chunks",
+      "Thread-safe dark GUI with real-time extraction logs"
     ],
-    tech: ["Python", "EXIF Parser", "JSON Extraction", "Tkinter", "PyInstaller"],
-    githubUrl: "https://github.com/hellohukam/ai-prompt-exif-extractor",
-    releaseUrl: "https://github.com/hellohukam/ai-prompt-exif-extractor/releases"
+    tech: ["Python", "EXIF Parser", "PNG Chunk Reader", "Tkinter", "PyInstaller"],
+    installGuide: "Download PromptExtractor.exe from GitHub Releases and select your target image directory."
   },
   {
     id: "batch-svg-sanitizer",
+    slug: "batch-svg-sanitizer",
     name: "Batch SVG Sanitizer Pro",
     tagline: "Strips proprietary editor namespaces, bloated XML tags, and optimizes vector SVGs.",
     category: "developer",
@@ -220,21 +256,57 @@ export const PROJECTS = [
     version: "v1.0.0",
     featured: false,
     badge: "Production Sanitizer",
-    iconType: "shield",
+    accentColor: "#14b8a6",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/batch-svg-sanitizer",
+    releaseUrl: "https://github.com/hellohukam/batch-svg-sanitizer/releases",
+    projectRoute: "/projects/batch-svg-sanitizer/",
+    markdownUrl: "/projects/batch-svg-sanitizer.md",
+    problem: "Vector graphics exported from Illustrator, Inkscape, and Figma carry proprietary namespaces, ghost clip paths, and XML metadata bloat that trigger marketplace rejections.",
+    solution: "Headless batch engine recursively sanitizing SVG trees, stripping editor bloat, pruning orphaned tags, and reducing file sizes without visual shifting.",
     description: "High-performance standalone Windows utility that recursively cleans and optimizes SVG files for web deployment and digital stock marketplaces. Strips proprietary editor namespaces (Illustrator, Inkscape, Figma), removes metadata bloat, and minifies coordinates.",
     highlights: [
-      "Strips proprietary tags: Adobe, Inkscape, Sketch, Figma",
-      "Removes XML comments, doctype bloat, and editor metadata",
-      "Optimizes coordinate precision without distortion",
-      "Recursive batch directory processing",
-      "Real-time file size savings analytics"
+      "Strips proprietary tags and namespaces: Adobe Illustrator, Inkscape, Sketch, Figma",
+      "Removes XML comments, doctype declarations, and redundant clipPath definitions",
+      "Optimizes coordinate precision to reduce file size without visual distortion",
+      "Recursive nested folder processing with automated safety backups",
+      "Real-time file size savings analytics and error reporting"
     ],
     tech: ["Python", "XML ElementTree", "Regex Optimizer", "Tkinter", "PyInstaller"],
-    githubUrl: "https://github.com/hellohukam/batch-svg-sanitizer",
-    releaseUrl: "https://github.com/hellohukam/batch-svg-sanitizer/releases"
+    installGuide: "Download BatchSVGSanitizer.exe from GitHub Releases or run via Python: python src/main.py."
+  },
+  {
+    id: "hukam-ai-creative-studio",
+    slug: "hukam-ai-creative-studio",
+    name: "Hukam AI Creative Studio",
+    tagline: "Full-stack FLUX.1 Schnell image studio with multi-key rotation and persistent gallery.",
+    category: "ai-media",
+    categoryLabel: "AI & Media",
+    status: "In Development",
+    version: "v0.9.0",
+    featured: false,
+    badge: "Full-Stack Studio",
+    accentColor: "#ec4899",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/hukam-ai-creative-studio",
+    releaseUrl: "https://github.com/hellohukam/hukam-ai-creative-studio",
+    projectRoute: "/projects/hukam-ai-creative-studio/",
+    markdownUrl: "/projects/hukam-ai-creative-studio.md",
+    problem: "Developing full-scale diffusion interfaces often hits API rate limits, requiring complex credential switching and persistent state infrastructure.",
+    solution: "A full-stack React and Express studio powered by Together AI's FLUX.1 Schnell with an automated 4-key rotation pool and PostgreSQL persistence.",
+    description: "Full-stack generative AI image studio powered by Together AI's FLUX.1 Schnell engine. Built with an automated 4-key rotation pool with rate-limit cooldown recovery, batch prompt generation, image gallery, CORS proxy, and PostgreSQL persistence.",
+    highlights: [
+      "FLUX.1 Schnell generative image synthesis with low-latency rendering",
+      "Automated round-robin 4-key rotation pool with 60s cooldown circuit breaker",
+      "Persistent image gallery with PostgreSQL and Drizzle ORM",
+      "Bulk and single session ZIP downloads with prompt metadata sidecars"
+    ],
+    tech: ["React 18", "TypeScript", "Express", "Drizzle ORM", "PostgreSQL", "FLUX.1"],
+    installGuide: "git clone https://github.com/hellohukam/hukam-ai-creative-studio.git && npm install && npm run dev"
   },
   {
     id: "image-color-palette-extractor",
+    slug: "image-color-palette-extractor",
     name: "Color Palette Extractor Pro",
     tagline: "High-speed Octree color quantization tool extracting dominant HEX palettes in bulk.",
     category: "utilities",
@@ -243,21 +315,28 @@ export const PROJECTS = [
     version: "v1.0.0",
     featured: false,
     badge: "Color Clustering",
-    iconType: "palette",
+    accentColor: "#eab308",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/image-color-palette-extractor",
+    releaseUrl: "https://github.com/hellohukam/image-color-palette-extractor/releases",
+    projectRoute: "/projects/image-color-palette-extractor/",
+    markdownUrl: "/projects/image-color-palette-extractor.md",
+    problem: "Extracting harmonious color schemes from large creative asset directories requires manual sampling or slow individual file inspections.",
+    solution: "Standalone desktop utility utilizing Octree spatial quantization to scan directories and extract dominant color palettes and HEX codes in seconds.",
     description: "High-speed, offline Windows desktop utility for designers, artists, and developers to extract dominant color palettes and HEX codes in bulk from images using Octree quantization with automatic thumbnail downscaling.",
     highlights: [
-      "Batch directory image scanning",
-      "Optimized Octree color clustering",
-      "Custom palette resolution (1 to 256 colors)",
-      "Structured HEX triplet text export (#RRGGBB)",
-      "Standalone portable binary without Python runtime"
+      "Bulk directory image scanning with fast thumbnail downscaling",
+      "Optimized Octree color clustering for representative palette extraction",
+      "Configurable palette resolution from 1 to 256 dominant colors",
+      "Structured HEX triplet text export (#RRGGBB) ready for design systems",
+      "100% offline portable binary requiring no Python runtime"
     ],
     tech: ["Python", "Pillow", "Octree Quantization", "Tkinter", "PyInstaller"],
-    githubUrl: "https://github.com/hellohukam/image-color-palette-extractor",
-    releaseUrl: "https://github.com/hellohukam/image-color-palette-extractor/releases"
+    installGuide: "Download PaletteExtractor.exe from Releases and run directly on Windows."
   },
   {
     id: "hukam-automation-tools",
+    slug: "hukam-automation-tools",
     name: "Hukam Automation Tools",
     tagline: "Creator pipeline automation suite for batch asset repair, FLUX, and metadata.",
     category: "developer",
@@ -266,19 +345,26 @@ export const PROJECTS = [
     version: "v1.0.0",
     featured: false,
     badge: "Pipeline Automation",
-    iconType: "gears",
+    accentColor: "#64748b",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/hukam-automation-tools",
+    releaseUrl: "https://github.com/hellohukam/hukam-automation-tools",
+    projectRoute: "/projects/hukam-automation-tools/",
+    markdownUrl: "/projects/hukam-automation-tools.md",
+    problem: "Repetitive media preparation tasks (renaming, header verification, format normalizing) consume hours when done manually.",
+    solution: "A curated suite of battle-tested Python command-line automation scripts designed for digital asset pipelines.",
     description: "Automation suite tailored for digital asset creators: handles batch file repair, FLUX generation orchestration, and automated metadata tagging for media libraries.",
     highlights: [
-      "Digital asset pipeline automation",
-      "Batch repair and container verification",
-      "Metadata tagging and cataloging tools"
+      "Digital asset pipeline automation for high-volume creator workflows",
+      "Batch container verification and header integrity checking",
+      "Automated tag injection and catalog organization"
     ],
     tech: ["Python", "CLI Tooling", "Batch Processing"],
-    githubUrl: "https://github.com/hellohukam/hukam-automation-tools",
-    releaseUrl: "https://github.com/hellohukam/hukam-automation-tools"
+    installGuide: "git clone https://github.com/hellohukam/hukam-automation-tools.git && python -m pip install -r requirements.txt"
   },
   {
     id: "vector-metadata-injector",
+    slug: "vector-metadata-injector",
     name: "Vector Metadata Injector",
     tagline: "Injects keywords, titles, and copyright metadata into vector files for stock pipelines.",
     category: "utilities",
@@ -287,19 +373,26 @@ export const PROJECTS = [
     version: "v1.0.0",
     featured: false,
     badge: "Stock Workflow",
-    iconType: "tag",
+    accentColor: "#38bdf8",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/vector-metadata-injector",
+    releaseUrl: "https://github.com/hellohukam/vector-metadata-injector",
+    projectRoute: "/projects/vector-metadata-injector/",
+    markdownUrl: "/projects/vector-metadata-injector.md",
+    problem: "Stock agencies require embedded IPTC/XMP/Dublin Core metadata in SVG files, but manual embedding across hundreds of files is error-prone.",
+    solution: "Automated utility embedding title, creator, licensing, and keyword metadata directly into SVG XML root headers.",
     description: "Automated tool to embed keywords, titles, descriptions, and copyright information directly into vector files for stock agency submission pipelines.",
     highlights: [
-      "Stock marketplace metadata injection",
-      "Embedded XML metadata compliance",
-      "Batch processing for digital vector creators"
+      "Stock agency compliant XML metadata injection (IPTC, XMP, Dublin Core)",
+      "Batch injection into hundreds of SVG vector files simultaneously",
+      "Preserves existing XML styling and coordinate definitions"
     ],
     tech: ["Python", "SVG XML Metadata", "Stock Automation"],
-    githubUrl: "https://github.com/hellohukam/vector-metadata-injector",
-    releaseUrl: "https://github.com/hellohukam/vector-metadata-injector"
+    installGuide: "python inject_metadata.py --input ./vectors --csv metadata.csv"
   },
   {
     id: "stock-metadata-csv-generator",
+    slug: "stock-metadata-csv-generator",
     name: "Stock Metadata CSV Generator",
     tagline: "Parses media libraries and generates submission CSVs for Adobe Stock & Shutterstock.",
     category: "utilities",
@@ -308,19 +401,26 @@ export const PROJECTS = [
     version: "v1.0.0",
     featured: false,
     badge: "Marketplace Tool",
-    iconType: "csv",
+    accentColor: "#22c55e",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/stock-metadata-csv-generator",
+    releaseUrl: "https://github.com/hellohukam/stock-metadata-csv-generator",
+    projectRoute: "/projects/stock-metadata-csv-generator/",
+    markdownUrl: "/projects/stock-metadata-csv-generator.md",
+    problem: "Submitting hundreds of assets to Adobe Stock, Shutterstock, and Freepik requires separate, strictly formatted CSV index sheets.",
+    solution: "Scans directories, reads filenames and metadata tags, and compiles pre-formatted CSV submission spreadsheets.",
     description: "Scans media folders, parses embedded titles and tags, and generates compliant submission CSV files for Adobe Stock, Freepik, and Shutterstock marketplaces.",
     highlights: [
-      "Automated CSV catalog compilation",
-      "Adobe Stock & Shutterstock compliance",
-      "Extracts titles, descriptions, and keywords"
+      "Generates multi-marketplace CSV catalogs from local media folders",
+      "Pre-formatted columns matching Adobe Stock, Shutterstock, and Freepik schemas",
+      "Extracts titles, descriptions, and comma-separated keyword arrays"
     ],
     tech: ["Python", "CSV Generator", "Stock Pipeline"],
-    githubUrl: "https://github.com/hellohukam/stock-metadata-csv-generator",
-    releaseUrl: "https://github.com/hellohukam/stock-metadata-csv-generator"
+    installGuide: "python generate_csv.py --dir ./assets --target adobe_stock"
   },
   {
     id: "smart-asset-organizer",
+    slug: "smart-asset-organizer",
     name: "Smart Asset Organizer",
     tagline: "Batch file classifier and folder organization utility for media workflows.",
     category: "utilities",
@@ -329,40 +429,54 @@ export const PROJECTS = [
     version: "v1.0.0",
     featured: false,
     badge: "File Management",
-    iconType: "folder",
+    accentColor: "#94a3b8",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/smart-asset-organizer",
+    releaseUrl: "https://github.com/hellohukam/smart-asset-organizer",
+    projectRoute: "/projects/smart-asset-organizer/",
+    markdownUrl: "/projects/smart-asset-organizer.md",
+    problem: "Unsorted downloads and generated images accumulate into chaotic folders, making file retrieval tedious.",
+    solution: "Rule-based directory organizer sorting high-volume creative assets by extension, image dimensions, and creation date into clean directory trees.",
     description: "Lightweight media pipeline file classifier that sorts, categorizes, and organizes large unstructured downloads and design folders into standardized folder hierarchies.",
     highlights: [
-      "Automated extension and dimension sorting",
-      "Structured output folder creation",
-      "Safe non-destructive organization"
+      "Automated extension, dimension, and timestamp categorization",
+      "Non-destructive sorting with optional duplicate detection",
+      "Fast directory restructuring for high-volume creative assets"
     ],
     tech: ["Python", "File System Automation"],
-    githubUrl: "https://github.com/hellohukam/smart-asset-organizer",
-    releaseUrl: "https://github.com/hellohukam/smart-asset-organizer"
+    installGuide: "python organize.py --source ./Downloads --output ./Archive"
   },
   {
     id: "u2net-bg-remover",
+    slug: "u2net-bg-remover",
     name: "U2Net BG Remover",
     tagline: "Offline desktop background remover using the classic U2Net salient model.",
-    category: "ai-creative",
-    categoryLabel: "AI & Creative Tools",
+    category: "ai-media",
+    categoryLabel: "AI & Media",
     status: "Complete",
     version: "v1.0.0",
     featured: false,
     badge: "Lightweight ML",
-    iconType: "scissors",
+    accentColor: "#6366f1",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/u2net-bg-remover",
+    releaseUrl: "https://github.com/hellohukam/u2net-bg-remover",
+    projectRoute: "/projects/u2net-bg-remover/",
+    markdownUrl: "/projects/u2net-bg-remover.md",
+    problem: "Complex segmentation models require dedicated GPUs that are inaccessible on low-power office workstations or older PCs.",
+    solution: "Implements U-2-Net salient object detection optimized for lightweight CPU execution with fast inference and zero cloud reliance.",
     description: "Offline desktop background remover using the classic U2Net salient object detection model for fast, lightweight cutouts on standard CPU hardware.",
     highlights: [
       "Classic U2Net salient object segmentation",
-      "CPU-friendly lightweight execution",
-      "Offline local processing"
+      "CPU-friendly lightweight execution requiring no dedicated GPU",
+      "Offline local processing with transparent PNG output"
     ],
     tech: ["Python", "PyTorch", "U2Net", "Pillow"],
-    githubUrl: "https://github.com/hellohukam/u2net-bg-remover",
-    releaseUrl: "https://github.com/hellohukam/u2net-bg-remover"
+    installGuide: "git clone https://github.com/hellohukam/u2net-bg-remover.git && python -m pip install -r requirements.txt"
   },
   {
     id: "yt-audio-extractor-gui",
+    slug: "yt-audio-extractor-gui",
     name: "YT Audio Extractor GUI",
     tagline: "Desktop GUI utility for extracting high-quality audio with metadata.",
     category: "utilities",
@@ -371,15 +485,21 @@ export const PROJECTS = [
     version: "v1.0.0",
     featured: false,
     badge: "Audio Utility",
-    iconType: "audio",
+    accentColor: "#ef4444",
+    license: "MIT",
+    githubUrl: "https://github.com/hellohukam/yt-audio-extractor-gui",
+    releaseUrl: "https://github.com/hellohukam/yt-audio-extractor-gui",
+    projectRoute: "/projects/yt-audio-extractor-gui/",
+    markdownUrl: "/projects/yt-audio-extractor-gui.md",
+    problem: "Extracting reference audio stems often involves sketchy web converters laden with invasive ads and reduced audio bitrates.",
+    solution: "Clean local desktop GUI wrapper extracting high-bitrate audio streams directly and preserving ID3 metadata tags.",
     description: "Simple desktop GUI application for extracting and saving high-quality audio streams with ID3 metadata preservation.",
     highlights: [
-      "High-bitrate audio extraction",
-      "ID3 metadata tag preservation",
-      "Simple desktop interface"
+      "Lossless and high-bitrate audio extraction",
+      "ID3 metadata tag preservation (artist, title, album)",
+      "Simple, ad-free desktop interface"
     ],
     tech: ["Python", "Tkinter", "Media Processing"],
-    githubUrl: "https://github.com/hellohukam/yt-audio-extractor-gui",
-    releaseUrl: "https://github.com/hellohukam/yt-audio-extractor-gui"
+    installGuide: "python -m pip install -r requirements.txt && python app.py"
   }
 ];

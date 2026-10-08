@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Image Forensic Repair Tool — Reconstruct Damaged AI Files · Hukam Labs</title>
+  
+  <meta name="description" content="AI Image Forensic Repair Tool resolves corrupted headers and fixes the Adobe Illustrator 'File format cannot be placed' error on AI-generated images. Standalone Windows x64 utility.">
+  <link rel="canonical" href="https://labs.likehukam.com/projects/ai-image-forensic-repair/">
+  <link rel="alternate" type="text/markdown" href="/projects/ai-image-forensic-repair.md" title="LLM Markdown Representation">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://labs.likehukam.com/projects/ai-image-forensic-repair/">
+  <meta property="og:title" content="AI Image Forensic Repair Tool — Reconstruct Damaged AI Files · Hukam Labs">
+  <meta property="og:description" content="Forensic utility repairing damaged AI-generated images and resolving Adobe Illustrator import errors. Standalone Windows x64 binary.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/styles/design-system.css">
+  <link rel="stylesheet" href="/src/styles/editorial.css">
+  <link rel="stylesheet" href="/src/styles/project-page.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "AI Image Forensic Repair Tool",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+        "softwareVersion": "1.1.0",
+        "license": "https://opensource.org/licenses/MIT",
+        "url": "https://labs.likehukam.com/projects/ai-image-forensic-repair/",
+        "author": {
+          "@type": "Person",
+          "name": "Waleed Ahmad",
+          "url": "https://likehukam.com"
+        },
+        "description": "Forensic image repair tool solving corrupted headers and the Adobe Illustrator 'File format cannot be placed' error."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hukam Labs",
+            "item": "https://labs.likehukam.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://labs.likehukam.com/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI Image Forensic Repair",
+            "item": "https://labs.likehukam.com/projects/ai-image-forensic-repair/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="technical-grid-bg"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="/" class="lab-wordmark">
+        <div class="lab-glyph">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="2" x2="12" y2="22"></line>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </div>
+        <div class="lab-title-text">
+          <strong>Hukam Labs</strong>
+          <span>/ Projects</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/" class="nav-item-link">Overview</a></li>
+          <li><a href="/#projects" class="nav-item-link">All Projects</a></li>
+          <li><a href="/#lab" class="nav-item-link">The Lab</a></li>
+          <li><a href="/#philosophy" class="nav-item-link">Philosophy</a></li>
+          <li><a href="/llms.txt" class="nav-item-link font-mono" style="font-size: 0.8rem; color: var(--color-brand);">llms.txt</a></li>
+          <li class="mobile-actions">
+            <a href="https://github.com/hellohukam/ai-image-forensic-repair" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              GitHub Repository
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/hellohukam/ai-image-forensic-repair" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 14px;">
+          <span>Repository</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="project-page-header">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="/">Hukam Labs</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="/#projects">Projects</a>
+          <span class="breadcrumb-separator">/</span>
+          <span style="color: var(--text-pure);">AI Image Forensic Repair</span>
+        </div>
+
+        <div class="project-title-area">
+          <div>
+            <h1 class="project-page-title">AI Image Forensic Repair Tool</h1>
+            <p class="project-lead">
+              Lossless pixel buffer reconstruction utility solving the infamous Adobe Illustrator 'File format cannot be placed' error caused by corrupted metadata chunks and truncated AI generator headers.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-meta-badges">
+          <span class="badge-tag" style="background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.25); color: #fb7185;">Binary Forensics</span>
+          <span class="status-indicator active">Active &middot; v1.1.0</span>
+          <span class="badge-tag">Platform: Windows x64</span>
+          <span class="badge-tag">License: MIT</span>
+          <span class="badge-tag">Lossless Reconstruction</span>
+        </div>
+
+        <div class="project-quick-actions">
+          <a href="https://github.com/hellohukam/ai-image-forensic-repair/releases" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download ImageRepairTool.exe</span>
+          </a>
+          <a href="https://github.com/hellohukam/ai-image-forensic-repair" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>GitHub Repository</span>
+          </a>
+          <a href="/projects/ai-image-forensic-repair.md" target="_blank" class="btn btn-ghost font-mono" style="font-size: 0.8rem;">
+            <span>Raw Markdown (LLM) ↗</span>
+          </a>
+        </div>
+
+        <div class="install-command-box">
+          <div class="install-command-text">git clone https://github.com/hellohukam/ai-image-forensic-repair.git &amp;&amp; python src/main.py</div>
+          <button class="copy-cmd-btn" data-copy-text="git clone https://github.com/hellohukam/ai-image-forensic-repair.git &amp;&amp; python src/main.py">
+            <span>Copy Command</span>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <section class="container project-content-grid">
+      <!-- Main Content -->
+      <div class="project-main-body">
+        <h2>Overview</h2>
+        <p>
+          Generative AI tools (Midjourney, ComfyUI, Automatic1111, DALL-E) frequently output JPEG and PNG containers that violate strict ISO container standards. While consumer web browsers tolerate missing termination chunks, professional publishing software like <strong>Adobe Illustrator, InDesign, and Photoshop</strong> will reject files with:
+        </p>
+        <blockquote style="background: rgba(244, 63, 94, 0.08); border-left: 3px solid var(--color-rose); padding: 12px 18px; margin: 16px 0; border-radius: 0 var(--radius-xs) var(--radius-xs) 0; font-family: var(--font-mono); font-size: 0.88rem; color: #fca5a5;">
+          "Error: The file format cannot be placed." or "The file is damaged and could not be opened."
+        </blockquote>
+        <p>
+          AI Image Forensic Repair performs a lossless pixel buffer read, strips corrupt metadata and damaged chunk markers, normalizes color profiles to standard sRGB/RGBA, and rebuilds pristine ISO-compliant headers.
+        </p>
+
+        <div class="problem-solution-duo">
+          <div class="ps-card problem">
+            <h4>The Bottleneck</h4>
+            <p>
+              Designers trying to place AI generated assets into Adobe Illustrator get blocked by strict container parsers. Manual re-saving in consumer viewers causes generational JPEG compression loss.
+            </p>
+          </div>
+          <div class="ps-card solution">
+            <h4>The Architecture</h4>
+            <p>
+              Performs direct pixel buffer extraction, strips damaged EXIF/tEXt blocks, synthesizes proper IEND/EOI markers, and re-encodes pure ISO-compliant containers losslessly in batch.
+            </p>
+          </div>
+        </div>
+
+        <h2>Key Capabilities</h2>
+        <div class="features-check-grid">
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Container Header Reconstruction</strong>
+              <p>Detects truncated PNG streams and appends valid terminal IEND chunks, restoring file integrity without modifying pixel color values.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Color Space Normalization</strong>
+              <p>Converts erratic palette indexes and malformed ICC profiles into standardized, universally supported sRGB and RGBA spaces.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Recursive Batch Subfolder Processing</strong>
+              <p>Process entire nested project libraries containing hundreds of assets in seconds with real-time status reporting.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Safety Backups &amp; In-Place Modification</strong>
+              <p>Offers safe export to an isolated <code>Repaired_HQ</code> directory or in-place overwrite with automatic timestamped backup archives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="project-sidebar">
+        <div class="sidebar-box">
+          <h4>Technical Specifications</h4>
+          <div class="spec-list">
+            <div class="spec-entry">
+              <span class="spec-entry-label">Version</span>
+              <span class="spec-entry-val font-mono">v1.1.0</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Engine</span>
+              <span class="spec-entry-val">Python &middot; Pillow &middot; Binary Forensics</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Platform</span>
+              <span class="spec-entry-val">Windows 10 / 11 (64-bit)</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Supported</span>
+              <span class="spec-entry-val font-mono">PNG, JPG, WebP, TIFF</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">License</span>
+              <span class="spec-entry-val font-mono">MIT License</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Author</span>
+              <span class="spec-entry-val">Waleed Ahmad</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <h4>Repository Links</h4>
+          <div class="spec-list">
+            <a href="https://github.com/hellohukam/ai-image-forensic-repair/releases" target="_blank" rel="noopener noreferrer" class="item-link-primary">
+              Download Executable 📥
+            </a>
+            <a href="https://github.com/hellohukam/ai-image-forensic-repair" target="_blank" rel="noopener noreferrer" class="item-link-primary">
+              GitHub Source Code ↗
+            </a>
+            <a href="/projects/ai-image-forensic-repair.md" target="_blank" class="item-link-primary">
+              Raw Markdown (LLM) ↗
+            </a>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>&copy; 2026 Hukam Labs &middot; Open-source engineering under MIT / GPL.</div>
+      <div>
+        <a href="/#projects" style="margin-right: 14px;">All Projects</a>
+        <a href="/llms.txt" style="margin-right: 14px;">llms.txt</a>
+        <a href="https://github.com/hellohukam" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

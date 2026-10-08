@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hukam AI Upscaler Pro — Vulkan Real-ESRGAN Super-Resolution · Hukam Labs</title>
+  
+  <meta name="description" content="Hukam AI Upscaler Pro is a hardware-accelerated Vulkan Real-ESRGAN super-resolution desktop application for Windows x64. Standalone 55MB executable, low-VRAM tiling, and crash-resilient resume log.">
+  <link rel="canonical" href="https://labs.likehukam.com/projects/hukam-ai-upscaler/">
+  <link rel="alternate" type="text/markdown" href="/projects/hukam-ai-upscaler.md" title="LLM Markdown Representation">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://labs.likehukam.com/projects/hukam-ai-upscaler/">
+  <meta property="og:title" content="Hukam AI Upscaler Pro — Vulkan Real-ESRGAN Super-Resolution · Hukam Labs">
+  <meta property="og:description" content="Hardware-accelerated desktop AI upscaler for Windows x64 powered by Real-ESRGAN Vulkan NCNN. Standalone 55MB executable without CUDA or Python setup.">
+  <meta property="og:image" content="/assets/showcase/upscaler-upscaled.jpg">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Hukam AI Upscaler Pro — Vulkan Real-ESRGAN Super-Resolution · Hukam Labs">
+  <meta property="twitter:description" content="Hardware-accelerated desktop AI upscaler for Windows x64 powered by Real-ESRGAN Vulkan NCNN. Standalone 55MB executable without CUDA or Python setup.">
+  <meta property="twitter:image" content="/assets/showcase/upscaler-upscaled.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/styles/design-system.css">
+  <link rel="stylesheet" href="/src/styles/editorial.css">
+  <link rel="stylesheet" href="/src/styles/project-page.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Hukam AI Upscaler Pro",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+        "softwareVersion": "1.0.0",
+        "license": "https://opensource.org/licenses/MIT",
+        "url": "https://labs.likehukam.com/projects/hukam-ai-upscaler/",
+        "author": {
+          "@type": "Person",
+          "name": "Waleed Ahmad",
+          "url": "https://likehukam.com"
+        },
+        "description": "Hardware-accelerated Vulkan Real-ESRGAN super-resolution desktop application for Windows x64."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hukam Labs",
+            "item": "https://labs.likehukam.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://labs.likehukam.com/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hukam AI Upscaler Pro",
+            "item": "https://labs.likehukam.com/projects/hukam-ai-upscaler/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="technical-grid-bg"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="/" class="lab-wordmark">
+        <div class="lab-glyph">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="2" x2="12" y2="22"></line>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </div>
+        <div class="lab-title-text">
+          <strong>Hukam Labs</strong>
+          <span>/ Projects</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/" class="nav-item-link">Overview</a></li>
+          <li><a href="/#projects" class="nav-item-link">All Projects</a></li>
+          <li><a href="/#lab" class="nav-item-link">The Lab</a></li>
+          <li><a href="/#philosophy" class="nav-item-link">Philosophy</a></li>
+          <li><a href="/llms.txt" class="nav-item-link font-mono" style="font-size: 0.8rem; color: var(--color-brand);">llms.txt</a></li>
+          <li class="mobile-actions">
+            <a href="https://github.com/hellohukam/hukam-ai-upscaler" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              GitHub Repository
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/hellohukam/hukam-ai-upscaler" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 14px;">
+          <span>Repository</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="project-page-header">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="/">Hukam Labs</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="/#projects">Projects</a>
+          <span class="breadcrumb-separator">/</span>
+          <span style="color: var(--text-pure);">Hukam AI Upscaler Pro</span>
+        </div>
+
+        <div class="project-title-area">
+          <div>
+            <h1 class="project-page-title">Hukam AI Upscaler Pro</h1>
+            <p class="project-lead">
+              Hardware-accelerated desktop super-resolution software for Windows x64 powered by Real-ESRGAN Vulkan NCNN. Bundles neural weights directly inside a standalone 55MB executable without requiring Python, CUDA drivers, or cloud subscriptions.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-meta-badges">
+          <span class="badge-tag" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.25); color: #fbbf24;">Standalone Binary</span>
+          <span class="status-indicator active">Active &middot; v1.0.0</span>
+          <span class="badge-tag">Engine: Vulkan NCNN</span>
+          <span class="badge-tag">License: MIT</span>
+          <span class="badge-tag">Offline &middot; No Cloud</span>
+        </div>
+
+        <div class="project-quick-actions">
+          <a href="https://github.com/hellohukam/hukam-ai-upscaler/releases/download/v1.0.0/HukamUpscaler.exe" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download HukamUpscaler.exe (~55MB)</span>
+          </a>
+          <a href="https://github.com/hellohukam/hukam-ai-upscaler" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>GitHub Repository</span>
+          </a>
+          <a href="/projects/hukam-ai-upscaler.md" target="_blank" class="btn btn-ghost font-mono" style="font-size: 0.8rem;">
+            <span>Raw Markdown (LLM) ↗</span>
+          </a>
+        </div>
+
+        <div class="install-command-box">
+          <div class="install-command-text">git clone https://github.com/hellohukam/hukam-ai-upscaler.git &amp;&amp; pip install -r requirements.txt</div>
+          <button class="copy-cmd-btn" data-copy-text="git clone https://github.com/hellohukam/hukam-ai-upscaler.git &amp;&amp; pip install -r requirements.txt">
+            <span>Copy Command</span>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Interactive Comparison Showcase -->
+    <section class="container" style="padding-top: 40px;">
+      <div class="card-panel" style="padding: 24px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="status-indicator complete">Live Visual Output</span>
+            <strong style="font-size: 0.95rem;">Uncompressed Test Image vs Vulkan 4x Super-Resolution</strong>
+          </div>
+          <span class="font-mono text-muted" style="font-size: 0.75rem;">Model: realesrgan-x4plus &middot; Scale: 400%</span>
+        </div>
+
+        <div class="interactive-slider-box" id="interactive-slider" style="min-height: 440px;">
+          <img src="/assets/showcase/upscaler-original.jpg" alt="Original Uncompressed Input" class="slider-img">
+          <span class="slider-legend right">Original (Uncompressed Crop)</span>
+
+          <img src="/assets/showcase/upscaler-upscaled.jpg" alt="Vulkan 4x Upscaled Output" class="slider-img slider-img-after" id="slider-after-img">
+          <span class="slider-legend left">Real-ESRGAN Vulkan (4x Enhanced)</span>
+
+          <div class="slider-divider-line" id="slider-divider"></div>
+          <div class="slider-drag-handle" id="slider-handle" aria-label="Drag slider">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 14px; font-size: 0.82rem; color: var(--text-muted); flex-wrap: wrap; gap: 8px;">
+          <span>Drag the divider to evaluate edge sharpness, texture reconstruction, and halo suppression.</span>
+          <span class="font-mono">Inference time: ~1.2s on NVIDIA RTX / ~2.8s on AMD Radeon</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container project-content-grid">
+      <!-- Main Content -->
+      <div class="project-main-body">
+        <h2>Overview</h2>
+        <p>
+          Hukam AI Upscaler Pro was built to give artists, photographers, and video creators access to top-tier neural super-resolution without the friction of commercial SaaS paywalls or complex developer environments. It wraps the battle-tested Real-ESRGAN Vulkan NCNN inference engine inside a single portable 55MB Windows binary.
+        </p>
+
+        <div class="problem-solution-duo">
+          <div class="ps-card problem">
+            <h4>The Bottleneck</h4>
+            <p>
+              Standard open-source super-resolution repositories require 4GB+ of PyTorch wheels, specific CUDA driver toolkits, and manual model weight downloads. Non-NVIDIA users (AMD Radeon, Intel Arc) are frequently locked out due to proprietary CUDA bindings.
+            </p>
+          </div>
+          <div class="ps-card solution">
+            <h4>The Architecture</h4>
+            <p>
+              By leveraging the universal Vulkan graphics API and NCNN runtime, Hukam Upscaler executes directly across NVIDIA, AMD, and Intel GPUs. All three core model weights are embedded into the single binary, and a resume log prevents lost progress.
+            </p>
+          </div>
+        </div>
+
+        <h2>Pre-Bundled Neural Models</h2>
+        <div class="features-check-grid">
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>realesrgan-x4plus (Real-World &amp; Photography)</strong>
+              <p>Tuned for realistic photography, portraits, high-frequency textures, and scanned prints. Restores natural micro-contrast without oil-paint plastic smoothing.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>realesrgan-x4plus-anime (2D Illustration &amp; Manga)</strong>
+              <p>Specialized for digital illustrations, vector rasterizations, anime, and line art. Eliminates compression ringing and reconstructs razor-sharp line weights.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>realesr-animevideov3 (Video Super-Resolution)</strong>
+              <p>Lightweight multi-scale (2x / 3x / 4x) model tuned for smooth temporal coherence across video frames, eliminating frame-to-frame flicker.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Engineering Highlights</h2>
+        <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 28px;">
+          <li><strong>Crash-Resilient Resume Log:</strong> Records completed items to <code>upscaler_resume_log.json</code>. If a long batch of 500 images is paused or interrupted, relaunching picks up right where it left off.</li>
+          <li><strong>Low-VRAM Tile Splitting:</strong> Automatically splits ultra-high-resolution images into smaller overlapping tiles (100–200px) during GPU pass, preventing Out-Of-Memory (OOM) crashes on integrated graphics or laptop GPUs.</li>
+          <li><strong>Zero Network Dependency:</strong> Runs completely offline. Sensitive creative assets, private client files, and confidential imagery never touch an external server.</li>
+        </ul>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="project-sidebar">
+        <div class="sidebar-box">
+          <h4>Technical Specifications</h4>
+          <div class="spec-list">
+            <div class="spec-entry">
+              <span class="spec-entry-label">Version</span>
+              <span class="spec-entry-val font-mono">v1.0.0</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Package Size</span>
+              <span class="spec-entry-val font-mono">~55 MB (Self-contained)</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Engine</span>
+              <span class="spec-entry-val">Real-ESRGAN Vulkan NCNN</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Hardware API</span>
+              <span class="spec-entry-val">Vulkan 1.1+ (Universal GPU)</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">License</span>
+              <span class="spec-entry-val font-mono">MIT License</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Author</span>
+              <span class="spec-entry-val">Waleed Ahmad</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <h4>Downloads &amp; Links</h4>
+          <div class="spec-list">
+            <a href="https://github.com/hellohukam/hukam-ai-upscaler/releases/download/v1.0.0/HukamUpscaler.exe" class="item-link-primary">
+              Download Standalone .EXE 📥
+            </a>
+            <a href="https://github.com/hellohukam/hukam-ai-upscaler" target="_blank" rel="noopener noreferrer" class="item-link-primary">
+              GitHub Repository ↗
+            </a>
+            <a href="https://github.com/hellohukam/hukam-ai-upscaler/releases" target="_blank" rel="noopener noreferrer" class="item-link-primary">
+              Release Notes ↗
+            </a>
+            <a href="/projects/hukam-ai-upscaler.md" target="_blank" class="item-link-primary">
+              Raw Markdown (LLM) ↗
+            </a>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>&copy; 2026 Hukam Labs &middot; Open-source engineering under MIT / GPL.</div>
+      <div>
+        <a href="/#projects" style="margin-right: 14px;">All Projects</a>
+        <a href="/llms.txt" style="margin-right: 14px;">llms.txt</a>
+        <a href="https://github.com/hellohukam" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

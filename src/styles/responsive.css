@@ -1,52 +1,54 @@
 /* ==========================================================================
-   Hukam Labs — Responsive Media Queries & Mobile Navigation
+   Hukam Labs — Responsive Media Queries & Mobile System
    ========================================================================== */
 
-/* ---------- Tablet Breakpoint (< 1024px) ---------- */
+/* ---------- Tablet (< 1024px) ---------- */
 @media (max-width: 1024px) {
-  .hero-title {
-    font-size: 2.8rem;
+  .hero-main-title {
+    font-size: 3rem;
   }
 
-  .telemetry-grid {
+  .spec-bar {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
   }
 
-  .card-spotlight {
+  .showcase-inner {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 28px;
+    min-height: auto;
   }
 
-  .card-featured {
-    grid-column: span 12;
+  .showcase-visual {
+    border-left: none;
+    border-top: 1px solid var(--border-hairline);
+    min-height: 380px;
   }
 
-  .projects-catalog-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .pillars-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .about-grid {
+  .flagship-duo-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
   }
 
-  .slider-container {
-    height: 400px;
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pillars-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-content-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* ---------- Mobile Breakpoint (< 768px) ---------- */
+/* ---------- Mobile (< 768px) ---------- */
 @media (max-width: 768px) {
   :root {
-    --header-height: 64px;
+    --header-height: 58px;
   }
 
   .container {
@@ -54,193 +56,177 @@
     padding-right: 18px;
   }
 
-  .hero {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  .hero-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
-  .hero-title {
+  .hero-main-title {
     font-size: 2.2rem;
   }
 
-  .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 28px;
+  .hero-mission-lead {
+    font-size: 1.05rem;
   }
 
-  .hero-cta-group {
+  .hero-cta-bar {
     flex-direction: column;
-    width: 100%;
-    gap: 12px;
+    align-items: stretch;
   }
 
-  .hero-cta-group .btn-primary,
-  .hero-cta-group .btn-secondary {
+  .hero-cta-bar .btn {
     width: 100%;
-    justify-content: center;
   }
 
-  .telemetry-grid {
+  .spec-bar {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
   }
 
-  .telemetry-number {
-    font-size: 1.25rem;
+  .spec-cell {
+    padding: 12px 14px;
   }
 
-  .telemetry-label {
-    font-size: 0.72rem;
+  .spec-cell-value {
+    font-size: 1rem;
   }
 
-  /* Mobile Navigation Drawer */
-  .mobile-toggle {
+  /* Navigation Drawer */
+  .mobile-menu-btn {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .nav-menu {
+  .nav-links {
     position: fixed;
     top: var(--header-height);
     left: 0;
     width: 100%;
-    background: rgba(7, 9, 14, 0.98);
+    background: rgba(9, 11, 16, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-medium);
+    border-bottom: 1px solid var(--border-contrast);
     flex-direction: column;
     align-items: flex-start;
     padding: 24px;
-    gap: 20px;
+    gap: 18px;
     display: none;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
   }
 
-  .nav-menu.open {
+  .nav-links.open {
     display: flex;
   }
 
-  .nav-link {
-    font-size: 1.05rem;
+  .nav-item-link {
+    font-size: 1rem;
     width: 100%;
-    padding: 8px 0;
+    padding: 6px 0;
   }
 
   .nav-actions {
     display: none;
   }
 
-  .nav-menu .nav-actions-mobile {
-    display: block;
+  .nav-links .mobile-actions {
     width: 100%;
-    padding-top: 16px;
-    border-top: 1px solid var(--border-subtle);
+    padding-top: 14px;
+    border-top: 1px solid var(--border-hairline);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .nav-menu .nav-actions-mobile .btn-github {
+  .nav-links .mobile-actions .btn {
     width: 100%;
-    justify-content: center;
-    padding: 10px;
   }
 
-  /* Showcase slider */
-  .slider-container {
-    height: 280px;
+  /* Showcase adjustments */
+  .showcase-content {
+    padding: 24px;
   }
 
-  .slider-handle {
+  .showcase-visual {
+    padding: 20px;
+  }
+
+  .interactive-slider-box {
+    min-height: 280px;
+  }
+
+  .slider-drag-handle {
     width: 32px;
     height: 32px;
   }
 
-  .slider-badge {
-    font-size: 0.65rem;
-    padding: 3px 8px;
-    bottom: 10px;
-  }
-
-  .comparison-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .comparison-caption {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  /* Catalog Directory */
-  .directory-controls {
+  /* Catalog */
+  .catalog-toolbar {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .filter-tabs {
+  .filter-group {
     width: 100%;
     overflow-x: auto;
-    padding-bottom: 6px;
-    justify-content: flex-start;
+    padding-bottom: 4px;
   }
 
-  .search-box {
+  .search-field-wrapper {
     width: 100%;
-    min-width: 100%;
   }
 
-  .projects-catalog-grid {
+  .catalog-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
   }
 
-  .pillars-grid {
+  /* Editorial & Founder */
+  .editorial-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 24px;
   }
 
-  .about-card {
+  .pillars-row {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-profile-card {
+    flex-direction: column;
     padding: 24px;
   }
 
-  .github-banner {
-    padding: 32px 20px;
-  }
-
-  .github-banner h3 {
-    font-size: 1.5rem;
-  }
-
-  .footer-top {
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .footer-bottom {
+  /* Project Detail Body */
+  .project-title-area {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
   }
-}
 
-/* ---------- Tiny Breakpoint (< 480px) ---------- */
-@media (max-width: 480px) {
-  .telemetry-grid {
+  .problem-solution-duo {
     grid-template-columns: 1fr;
   }
 
-  .hero-pill {
-    font-size: 0.72rem;
-  }
-
-  .spotlight-actions {
+  .install-command-box {
     flex-direction: column;
-    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
   }
 
-  .spotlight-actions .btn-primary,
-  .spotlight-actions .btn-secondary {
+  .copy-cmd-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

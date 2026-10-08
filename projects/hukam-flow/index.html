@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hukam Flow — Chrome MV3 Batch Automation Tool · Hukam Labs</title>
+  
+  <meta name="description" content="Hukam Flow is a production-grade Chrome Manifest V3 workflow automation tool and queue runner for Google Flow (flow.google.com), featuring Side Panel UI, MAIN-world Angular injection, and internal API interception.">
+  <link rel="canonical" href="https://labs.likehukam.com/projects/hukam-flow/">
+  <link rel="alternate" type="text/markdown" href="/projects/hukam-flow.md" title="LLM Markdown Representation">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://labs.likehukam.com/projects/hukam-flow/">
+  <meta property="og:title" content="Hukam Flow — Chrome MV3 Batch Automation Tool · Hukam Labs">
+  <meta property="og:description" content="Chrome Manifest V3 workflow automation tool for Google Flow with Side Panel, Angular event synthesis, and internal batchexecute network interception.">
+  <meta property="og:image" content="/assets/icons/hukam-flow.png">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="Hukam Flow — Chrome MV3 Batch Automation Tool · Hukam Labs">
+  <meta property="twitter:description" content="Chrome Manifest V3 workflow automation tool for Google Flow with Side Panel, Angular event synthesis, and internal batchexecute network interception.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/styles/design-system.css">
+  <link rel="stylesheet" href="/src/styles/editorial.css">
+  <link rel="stylesheet" href="/src/styles/project-page.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Hukam Flow",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chromium, Google Chrome",
+        "softwareVersion": "6.3.1",
+        "license": "https://opensource.org/licenses/MIT",
+        "url": "https://labs.likehukam.com/projects/hukam-flow/",
+        "author": {
+          "@type": "Person",
+          "name": "Waleed Ahmad",
+          "url": "https://likehukam.com"
+        },
+        "description": "Chrome Manifest V3 batch automation tool and queue manager for Google Flow."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hukam Labs",
+            "item": "https://labs.likehukam.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://labs.likehukam.com/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hukam Flow",
+            "item": "https://labs.likehukam.com/projects/hukam-flow/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="technical-grid-bg"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="/" class="lab-wordmark">
+        <div class="lab-glyph">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="2" x2="12" y2="22"></line>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </div>
+        <div class="lab-title-text">
+          <strong>Hukam Labs</strong>
+          <span>/ Projects</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/" class="nav-item-link">Overview</a></li>
+          <li><a href="/#projects" class="nav-item-link">All Projects</a></li>
+          <li><a href="/#lab" class="nav-item-link">The Lab</a></li>
+          <li><a href="/#philosophy" class="nav-item-link">Philosophy</a></li>
+          <li><a href="/llms.txt" class="nav-item-link font-mono" style="font-size: 0.8rem; color: var(--color-brand);">llms.txt</a></li>
+          <li class="mobile-actions">
+            <a href="https://github.com/hellohukam/hukam-flow" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              GitHub Repository
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/hellohukam/hukam-flow" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 14px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>Repository</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="project-page-header">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="/">Hukam Labs</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="/#projects">Projects</a>
+          <span class="breadcrumb-separator">/</span>
+          <span style="color: var(--text-pure);">Hukam Flow</span>
+        </div>
+
+        <div class="project-title-area">
+          <div>
+            <h1 class="project-page-title">Hukam Flow</h1>
+            <p class="project-lead">
+              Modern Chrome Manifest V3 batch automation tool and queue runner for Google Flow (flow.google.com). Engineered with dedicated dockable Side Panel, MAIN-world Angular event synthesis, and internal network payload interception.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-meta-badges">
+          <span class="badge-tag" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.25); color: #34d399;">Flagship Tool</span>
+          <span class="status-indicator active">Active &middot; v6.3.1</span>
+          <span class="badge-tag">License: MIT</span>
+          <span class="badge-tag">Platform: Chromium MV3</span>
+          <span class="badge-tag">Zero Telemetry</span>
+        </div>
+
+        <div class="project-quick-actions">
+          <a href="https://github.com/hellohukam/hukam-flow" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>View Source on GitHub</span>
+          </a>
+          <a href="https://github.com/hellohukam/hukam-flow/releases" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>Releases</span>
+          </a>
+          <a href="/projects/hukam-flow.md" target="_blank" class="btn btn-ghost font-mono" style="font-size: 0.8rem;">
+            <span>Raw Markdown (LLM) ↗</span>
+          </a>
+        </div>
+
+        <div class="install-command-box">
+          <div class="install-command-text">git clone https://github.com/hellohukam/hukam-flow.git</div>
+          <button class="copy-cmd-btn" data-copy-text="git clone https://github.com/hellohukam/hukam-flow.git">
+            <span>Copy Command</span>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <section class="container project-content-grid">
+      <!-- Main Content -->
+      <div class="project-main-body">
+        <h2>Overview</h2>
+        <p>
+          Hukam Flow was engineered to solve the operational friction of running large, multi-prompt creative generation workflows on Google Flow (flow.google.com). Standard browser automation extensions break because Google Flow is an enterprise Angular single-page application that strictly verifies input event provenance and cancels synthetic dispatch events.
+        </p>
+
+        <div class="problem-solution-duo">
+          <div class="ps-card problem">
+            <h4>The Bottleneck</h4>
+            <p>
+              Users running hundreds of prompts must manually enter text, wait for render completion, and click download. Standard DOM recorders fail because Angular forms ignore simulated DOM keystrokes, and network timeouts frequently cause silent failures.
+            </p>
+          </div>
+          <div class="ps-card solution">
+            <h4>The Architecture</h4>
+            <p>
+              Hukam Flow executes through an isolated Chrome Side Panel, injects trusted event synthesis hooks directly into the page's MAIN execution world, listens to internal batchexecute network signals, and manages automated jitter-paced retries with prompt-indexed file naming.
+            </p>
+          </div>
+        </div>
+
+        <h2>Under the Hood: Technical Architecture</h2>
+        <p>
+          The extension is structured according to strict Manifest V3 separation of concerns without relying on bulky external frameworks:
+        </p>
+
+        <div class="card-panel" style="padding: 24px; margin-bottom: 28px; background: #080a0e;">
+          <div class="code-editor-body">
+            <span class="token-comment">// 1. Page Hook (MAIN world execution context)</span><br>
+            <span class="token-keyword">function</span> <span class="token-fn">dispatchAngularEvent</span>(target, value) {<br>
+            &nbsp;&nbsp;target.focus();<br>
+            &nbsp;&nbsp;target.value = value;<br>
+            &nbsp;&nbsp;target.<span class="token-fn">dispatchEvent</span>(<span class="token-keyword">new</span> <span class="token-meta">InputEvent</span>(<span class="token-str">'input'</span>, { bubbles: <span class="token-meta">true</span>, composed: <span class="token-meta">true</span> }));<br>
+            &nbsp;&nbsp;target.<span class="token-fn">dispatchEvent</span>(<span class="token-keyword">new</span> <span class="token-meta">Event</span>(<span class="token-str">'change'</span>, { bubbles: <span class="token-meta">true</span> }));<br>
+            }<br><br>
+            <span class="token-comment">// 2. Service Worker Network Interception</span><br>
+            chrome.webRequest.onCompleted.<span class="token-fn">addListener</span>((details) =&gt; {<br>
+            &nbsp;&nbsp;<span class="token-keyword">if</span> (details.url.<span class="token-fn">includes</span>(<span class="token-str">'batchexecute'</span>)) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;chrome.tabs.<span class="token-fn">sendMessage</span>(details.tabId, { type: <span class="token-str">'FLOW_BATCH_COMPLETED'</span> });<br>
+            &nbsp;&nbsp;}<br>
+            }, { urls: [<span class="token-str">'*://flow.google.com/*'</span>] });
+          </div>
+        </div>
+
+        <h2>Key Capabilities & Features</h2>
+        <div class="features-check-grid">
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Dedicated Chrome Side Panel UI</strong>
+              <p>Dockable side panel opened via <code>Alt + Shift + F</code>. Keeps the primary Google Flow interface completely interactive and unobstructed.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>MAIN-World Page Injection Hook</strong>
+              <p>Bypasses Chrome extension content-script execution world boundaries to synthesize native trusted events that Angular form bindings register correctly.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Smart Auto Mode with Auto-Download</strong>
+              <p>Sequential batch runner that submits prompts, monitors internal response signals, saves generated assets with prompt-indexed filenames, and progresses automatically.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Anti-Bot Jitter Pacing & Multi-Tab Isolation</strong>
+              <p>Randomizes delays between generation requests (2.5s to 5.5s) to avoid server throttling. State is strictly tab-scoped so multiple tabs run concurrent batches safely.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>100% Private & Local Execution</strong>
+              <p>Zero telemetry, analytics, or remote API pings. Prompts and downloaded files remain entirely on the local client machine.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Installation & Setup</h2>
+        <p>Hukam Flow is distributed directly as an open-source extension directory:</p>
+        <ol style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 28px;">
+          <li>Clone the repository: <code>git clone https://github.com/hellohukam/hukam-flow.git</code></li>
+          <li>Open Google Chrome or any Chromium browser and visit <code>chrome://extensions/</code></li>
+          <li>Enable <strong>Developer mode</strong> in the top right corner.</li>
+          <li>Click <strong>Load unpacked</strong> and select the cloned directory.</li>
+          <li>Navigate to <a href="https://flow.google.com" target="_blank" rel="noopener noreferrer" style="color: var(--color-brand);">flow.google.com</a> and press <code>Alt + Shift + F</code> to launch the Side Panel.</li>
+        </ol>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="project-sidebar">
+        <div class="sidebar-box">
+          <h4>Technical Specifications</h4>
+          <div class="spec-list">
+            <div class="spec-entry">
+              <span class="spec-entry-label">Version</span>
+              <span class="spec-entry-val font-mono">v6.3.1</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Status</span>
+              <span class="spec-entry-val" style="color: var(--color-emerald);">Active Maintenance</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Platform</span>
+              <span class="spec-entry-val">Chrome / Chromium (MV3)</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Architecture</span>
+              <span class="spec-entry-val">Side Panel + MAIN World Hook</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">License</span>
+              <span class="spec-entry-val font-mono">MIT License</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Author</span>
+              <span class="spec-entry-val">Waleed Ahmad</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <h4>Repository Links</h4>
+          <div class="spec-list">
+            <a href="https://github.com/hellohukam/hukam-flow" target="_blank" rel="noopener noreferrer" class="item-link-primary">
+              GitHub Source Code ↗
+            </a>
+            <a href="https://github.com/hellohukam/hukam-flow/releases" target="_blank" rel="noopener noreferrer" class="item-link-primary">
+              Releases &amp; Changelog ↗
+            </a>
+            <a href="https://github.com/hellohukam/hukam-flow/issues" target="_blank" rel="noopener noreferrer" class="item-link-primary">
+              Issue Tracker ↗
+            </a>
+            <a href="/projects/hukam-flow.md" target="_blank" class="item-link-primary">
+              Raw Markdown (LLM) ↗
+            </a>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>&copy; 2026 Hukam Labs &middot; Open-source engineering under MIT / GPL.</div>
+      <div>
+        <a href="/#projects" style="margin-right: 14px;">All Projects</a>
+        <a href="/llms.txt" style="margin-right: 14px;">llms.txt</a>
+        <a href="https://github.com/hellohukam" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Magic Cleaner — WebGPU AI Background Remover &amp; Vectorizer · Hukam Labs</title>
+  
+  <meta name="description" content="SVG Magic Cleaner is a 100% private browser-based AI background remover and raster-to-SVG vectorizer using Hugging Face Transformers.js and WebGPU. Zero server uploads.">
+  <link rel="canonical" href="https://labs.likehukam.com/projects/svg-magic-cleaner/">
+  <link rel="alternate" type="text/markdown" href="/projects/svg-magic-cleaner.md" title="LLM Markdown Representation">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://labs.likehukam.com/projects/svg-magic-cleaner/">
+  <meta property="og:title" content="SVG Magic Cleaner — WebGPU AI Background Remover &amp; Vectorizer · Hukam Labs">
+  <meta property="og:description" content="In-browser AI background remover and raster-to-SVG vectorizer using Hugging Face Transformers.js and WebGPU. 100% client-side privacy.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/styles/design-system.css">
+  <link rel="stylesheet" href="/src/styles/editorial.css">
+  <link rel="stylesheet" href="/src/styles/project-page.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "SVG Magic Cleaner",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web Browser (Chrome, Firefox, Edge, Safari)",
+        "softwareVersion": "1.0.0",
+        "license": "https://opensource.org/licenses/MIT",
+        "url": "https://labs.likehukam.com/projects/svg-magic-cleaner/",
+        "author": {
+          "@type": "Person",
+          "name": "Waleed Ahmad",
+          "url": "https://likehukam.com"
+        },
+        "description": "In-browser AI background remover and raster-to-SVG vectorizer using Hugging Face Transformers and WebGPU."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Hukam Labs",
+            "item": "https://labs.likehukam.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://labs.likehukam.com/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SVG Magic Cleaner",
+            "item": "https://labs.likehukam.com/projects/svg-magic-cleaner/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="technical-grid-bg"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="/" class="lab-wordmark">
+        <div class="lab-glyph">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="2" x2="12" y2="22"></line>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </div>
+        <div class="lab-title-text">
+          <strong>Hukam Labs</strong>
+          <span>/ Projects</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/" class="nav-item-link">Overview</a></li>
+          <li><a href="/#projects" class="nav-item-link">All Projects</a></li>
+          <li><a href="/#lab" class="nav-item-link">The Lab</a></li>
+          <li><a href="/#philosophy" class="nav-item-link">Philosophy</a></li>
+          <li><a href="/llms.txt" class="nav-item-link font-mono" style="font-size: 0.8rem; color: var(--color-brand);">llms.txt</a></li>
+          <li class="mobile-actions">
+            <a href="https://github.com/hellohukam/svg-magic-cleaner" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              GitHub Repository
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/hellohukam/svg-magic-cleaner" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 14px;">
+          <span>Repository</span>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="project-page-header">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="/">Hukam Labs</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="/#projects">Projects</a>
+          <span class="breadcrumb-separator">/</span>
+          <span style="color: var(--text-pure);">SVG Magic Cleaner</span>
+        </div>
+
+        <div class="project-title-area">
+          <div>
+            <h1 class="project-page-title">SVG Magic Cleaner</h1>
+            <p class="project-lead">
+              100% private, browser-based AI background remover and raster-to-SVG vectorizer using Hugging Face Transformers.js and WebGPU. Converts bitmaps into scalable vectors with zero server uploads.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-meta-badges">
+          <span class="badge-tag" style="background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.25); color: #22d3ee;">WebGPU Accelerated</span>
+          <span class="status-indicator active">Active &middot; v1.0.0</span>
+          <span class="badge-tag">Model: RMBG-1.4</span>
+          <span class="badge-tag">License: MIT</span>
+          <span class="badge-tag">100% Private</span>
+        </div>
+
+        <div class="project-quick-actions">
+          <a href="https://github.com/hellohukam/svg-magic-cleaner" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>View Source on GitHub</span>
+          </a>
+          <a href="/projects/svg-magic-cleaner.md" target="_blank" class="btn btn-ghost font-mono" style="font-size: 0.8rem;">
+            <span>Raw Markdown (LLM) ↗</span>
+          </a>
+        </div>
+
+        <div class="install-command-box">
+          <div class="install-command-text">git clone https://github.com/hellohukam/svg-magic-cleaner.git &amp;&amp; npm install &amp;&amp; npm run dev</div>
+          <button class="copy-cmd-btn" data-copy-text="git clone https://github.com/hellohukam/svg-magic-cleaner.git &amp;&amp; npm install &amp;&amp; npm run dev">
+            <span>Copy Command</span>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <section class="container project-content-grid">
+      <!-- Main Content -->
+      <div class="project-main-body">
+        <h2>Overview</h2>
+        <p>
+          SVG Magic Cleaner eliminates the trade-off between privacy and AI convenience. It packages state-of-the-art neural background removal (`briaai/RMBG-1.4`) and contour vectorization directly inside a static browser environment. By using the browser's native WebGPU compute shaders via Hugging Face Transformers.js and ONNX Runtime Web, complex neural matrix multiplication executes locally at native hardware speeds.
+        </p>
+
+        <div class="problem-solution-duo">
+          <div class="ps-card problem">
+            <h4>The Bottleneck</h4>
+            <p>
+              Designers needing quick background removal or SVG conversion are coerced into subscription SaaS tools that upload private assets to third-party cloud servers, posing severe intellectual property and client privacy risks.
+            </p>
+          </div>
+          <div class="ps-card solution">
+            <h4>The Architecture</h4>
+            <p>
+              Runs completely in-memory on the client machine. The ONNX neural model is cached in browser IndexedDB, executed via WebGPU shaders, and converted into resolution-independent SVG vector paths without a single HTTP POST request.
+            </p>
+          </div>
+        </div>
+
+        <h2>Key Features</h2>
+        <div class="features-check-grid">
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>In-Browser RMBG-1.4 Neural Matting</strong>
+              <p>Executes deep background segmentation locally with crisp foreground edge preservation across hair, transparent objects, and complex geometry.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>WebGPU Hardware Acceleration</strong>
+              <p>Leverages GPU compute shaders for low-latency inference, with seamless WebAssembly (WASM) fallback for legacy browsers and older CPUs.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Bitmap to Resolution-Independent Vector Paths</strong>
+              <p>Automatically vectorizes segmented foreground masks into scalable, clean SVG <code>&lt;path&gt;</code> elements suitable for web development and icon libraries.</p>
+            </div>
+          </div>
+          <div class="feature-check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Interactive Split Comparison &amp; Batch ZIP Export</strong>
+              <p>Inspect output quality over an alpha checkerboard grid. Process multiple files simultaneously and download bundled results as a clean ZIP archive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="project-sidebar">
+        <div class="sidebar-box">
+          <h4>Technical Specifications</h4>
+          <div class="spec-list">
+            <div class="spec-entry">
+              <span class="spec-entry-label">Version</span>
+              <span class="spec-entry-val font-mono">v1.0.0</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Stack</span>
+              <span class="spec-entry-val">React 18 &middot; TypeScript &middot; Vite</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">AI Runtime</span>
+              <span class="spec-entry-val">Transformers.js (WebGPU)</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Model</span>
+              <span class="spec-entry-val font-mono">briaai/RMBG-1.4 ONNX</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">License</span>
+              <span class="spec-entry-val font-mono">MIT License</span>
+            </div>
+            <div class="spec-entry">
+              <span class="spec-entry-label">Author</span>
+              <span class="spec-entry-val">Waleed Ahmad</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <h4>Repository Links</h4>
+          <div class="spec-list">
+            <a href="https://github.com/hellohukam/svg-magic-cleaner" target="_blank" rel="noopener noreferrer" class="item-link-primary">
+              GitHub Source Code ↗
+            </a>
+            <a href="https://github.com/hellohukam/svg-magic-cleaner/issues" target="_blank" rel="noopener noreferrer" class="item-link-primary">
+              Issue Tracker ↗
+            </a>
+            <a href="/projects/svg-magic-cleaner.md" target="_blank" class="item-link-primary">
+              Raw Markdown (LLM) ↗
+            </a>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom-bar">
+      <div>&copy; 2026 Hukam Labs &middot; Open-source engineering under MIT / GPL.</div>
+      <div>
+        <a href="/#projects" style="margin-right: 14px;">All Projects</a>
+        <a href="/llms.txt" style="margin-right: 14px;">llms.txt</a>
+        <a href="https://github.com/hellohukam" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
